@@ -14,10 +14,6 @@ public class JavaApplication1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String name = "Eiasin";
-        System.out.println("Hello, " + name);
-                
-                
-    }
-    
+        System.out.println("Hello, World!");         
+    } 
 }
