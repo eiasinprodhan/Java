@@ -14,9 +14,13 @@ public class JavaApplication1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hello, World");
-                
-                
+        int input = 11;
+        if(input%2==0){
+            System.out.println("This is an even number");
+        }
+        else{
+            System.out.println("This is an odd number");
+        }
     }
     
 }
