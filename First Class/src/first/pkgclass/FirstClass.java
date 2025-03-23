@@ -6,7 +6,7 @@ package first.pkgclass;
 
 /**
  *
- * @author Black Spider
+ * @author
  */
 public class FirstClass {
 
