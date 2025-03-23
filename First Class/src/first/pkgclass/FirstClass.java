@@ -6,7 +6,7 @@ package first.pkgclass;
 
 /**
  *
- * @author
+ * @author Admin
  */
 public class FirstClass {
 
