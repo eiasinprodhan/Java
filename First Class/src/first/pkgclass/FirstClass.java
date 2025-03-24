@@ -14,7 +14,9 @@ public class FirstClass {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        int a = 10;
+        a=50;
+        System.out.println("Hello, !" + a);
     }
     
 }
