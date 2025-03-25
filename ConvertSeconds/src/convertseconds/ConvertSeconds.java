@@ -20,12 +20,12 @@ public class ConvertSeconds {
         System.out.println("Enter Seconds: ");
         int totalSeconds = scan.nextInt();
         
-        int sirHours = totalSeconds / 3600;
+        int hours = totalSeconds / 3600;
         int remainingSeconds = totalSeconds % 3600;
-        int sirMinutes = remainingSeconds/60;
-        int sirSeconds = remainingSeconds%60;
+        int minutes = remainingSeconds/60;
+        int seconds = remainingSeconds%60;
         
-        System.out.println(totalSeconds + " seconds is " +  sirHours + " hours and " + + sirMinutes + " minutes and " + sirSeconds + " seconds");
+        System.out.println(totalSeconds + " seconds is " +  hours + " hours and " + + minutes + " minutes and " + seconds + " seconds");
     }
     
 }
