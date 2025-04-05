@@ -15,7 +15,6 @@ public class CalculateInterest {
         double result = (double) amount * interestRate / (1-(1/Math.pow((1+interestRate), year*12)));
         System.out.println("Your Monthly is: " + (int) result + " Taka Only");
         System.out.println("Your Total is: " + (int) result*12*year + " Taka Only");
-        
     }
     
 }
