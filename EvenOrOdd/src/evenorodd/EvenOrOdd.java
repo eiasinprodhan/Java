@@ -1,4 +1,3 @@
-
 package evenorodd;
 
 import java.util.Scanner;
