@@ -1,13 +1,11 @@
-
 package date;
 
 import java.util.Scanner;
 
-
 public class Date {
 
     public static void main(String[] args) {
-        
+
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Enter a Year(Digit Only): ");
@@ -59,22 +57,46 @@ public class Date {
                 break;
             default:
                 System.out.println("Invalid Month");
+                System.exit(0);
         }
 
-        if (year % 4 == 0 && year % 100 != 0 || year % 400==0) {
-            if (month == 2 && date > 29) {
-                System.out.println("It's A Leap Year But February Can't Be More Than 29");
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            if (month == 1 && date > 31
+                    || month == 2 && date > 29
+                    || month == 3 && date > 31
+                    || month == 4 && date > 30
+                    || month == 5 && date > 31
+                    || month == 6 && date > 30
+                    || month == 7 && date > 31
+                    || month == 8 && date > 31
+                    || month == 9 && date > 30
+                    || month == 10 && date > 31
+                    || month == 11 && date > 30
+                    || month == 12 && date > 31) {
+                System.out.println("Invalid Date");
+                System.exit(0);
             } else {
                 System.out.println(newMonth + " " + date + ", " + year);
             }
-        }
-        else{
-            if (month == 2 && date > 28) {
-                System.out.println("It isn't Leap Year And February Can't Be More Than 28");
+        } else {
+            if (month == 1 && date > 31
+                    || month == 2 && date > 28
+                    || month == 3 && date > 31
+                    || month == 4 && date > 30
+                    || month == 5 && date > 31
+                    || month == 6 && date > 30
+                    || month == 7 && date > 31
+                    || month == 8 && date > 31
+                    || month == 9 && date > 30
+                    || month == 10 && date > 31
+                    || month == 11 && date > 30
+                    || month == 12 && date > 31) {
+                System.out.println("Invalid Date");
+                System.exit(0);
             } else {
                 System.out.println(newMonth + " " + date + ", " + year);
             }
         }
     }
-    
+
 }
