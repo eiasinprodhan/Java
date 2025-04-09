@@ -10,16 +10,27 @@ public class RockPaperScissorsGame {
         public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         
-        int rand = (int) (Math.random() * 10);
-        
         System.out.print("Choose Rock/Paper/Scissors: ");
         String user = scan.next();
         String computer = "";
         
+        int randFinal = 0;
+        boolean status = false;
+
+        while (status == false) {
+            int rand = (int) (Math.random() * 10);
+            if (rand >= 4 || rand <= 0) {
+                status = false;
+            } else {
+                status = true;
+                randFinal += rand;
+            }
+        }
         
         
         
-        switch (rand) {
+        
+        switch (randFinal) {
             case 1:
                 computer = "Rock";
                 break;
@@ -27,24 +38,6 @@ public class RockPaperScissorsGame {
                 computer = "Paper";
                 break;
             case 3:
-                computer = "Scissors";
-                break;
-            case 4:
-                computer = "Rock";
-                break;
-            case 5:
-                computer = "Paper";
-                break;
-            case 6:
-                computer = "Scissors";
-                break;
-            case 7:
-                computer = "Rock";
-                break;
-            case 8:
-                computer = "Paper";
-                break;
-            case 9:
                 computer = "Scissors";
                 break;
             default:
