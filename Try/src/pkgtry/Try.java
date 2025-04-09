@@ -18,7 +18,7 @@ public class Try {
                 || month.indexOf("i") + 1 > 0
                 || month.indexOf("o") + 1 > 0
                 || month.indexOf("u") + 1 > 0) {
-            System.out.println("Month: " + month);
+            System.out.print("Month: " + month);
         } 
         else {
             int newMonth = Integer.parseInt(month);
