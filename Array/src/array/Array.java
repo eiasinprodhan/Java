@@ -1,17 +1,21 @@
 package array;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Array {
 
     public static void main(String[] args) {
-        String[] names = {"Rakib", "Rohmatullah", "Atik", "Reja", "Sadiar"};
-        int[] marks = {95, 67, 85, 58, 45};
+        Scanner scan = new Scanner(System.in);
+        String[] names = new String[15];
 
-        for (int i = 0; i < names.length; i++) {
-            System.out.println(i+1 + ". " + names[i] + " got " + marks[i] + ".");
+        for (int i = 0; i < 15; i++) {
+            String userInput = scan.next();
+            names[1] = userInput;
         }
         
+        System.out.println(Arrays.toString(names));
+        
     }
-    
+
 }
