@@ -20,13 +20,13 @@ public class TwoDimensionalArray {
         for(int row = 0; row < myArrays.length; row++){
             
             for(int column = 0; column < myArrays[row].length; column++){
-                System.out.print("Enter Value For " + (row+1) + " x  " + (column+1) + ": ");
+                System.out.print("Enter value for row " + (row+1) + " x column " + (column+1) + ": ");
                 int userInput = scan.nextInt();
                 myArrays[row][column] = userInput;
             }
         }
         
-        System.out.println(Arrays.deepToString(myArrays));
+        System.out.println("Your multidimensional array is: " + Arrays.deepToString(myArrays));
         
     }
     
