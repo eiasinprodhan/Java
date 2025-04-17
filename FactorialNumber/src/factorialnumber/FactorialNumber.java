@@ -9,10 +9,12 @@ public class FactorialNumber {
         System.out.print("Enter Your Number: ");
         int input = scan.nextInt();
         int result = 1;
+        
         for(int i = 1; i<=input; i++){
             result*=i;
         }
-        System.out.println("Your Result is: " + result);
+        
+        System.out.println("Factorial of " + input + " is: " + result);
         }
     
 }
