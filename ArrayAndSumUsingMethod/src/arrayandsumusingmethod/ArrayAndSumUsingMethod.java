@@ -13,7 +13,7 @@ public class ArrayAndSumUsingMethod {
 
         System.out.print("Enter your column limit: ");
         int columnSize = scan.nextInt();
-        
+
         System.out.println("Sum of your array: " + doArraySum(rowSize, columnSize));
 
     }
@@ -28,7 +28,7 @@ public class ArrayAndSumUsingMethod {
                 System.out.print("Enter value for row " + (row + 1) + " x column " + (column + 1) + ": ");
                 int userInput = scan.nextInt();
                 myArray[row][column] = userInput;
-                result+=myArray[row][column];
+                result += myArray[row][column];
             }
         }
 
