@@ -1,6 +1,7 @@
 package social;
 
 import java.util.Scanner;
+import java.util.UUID;
 import social.tclass.User;
 
 public class Social {
@@ -22,7 +23,8 @@ public class Social {
             
             user.Login(email, password);
 
-        } else if (userChoice.equalsIgnoreCase("Registration")) {
+        } 
+        else if (userChoice.equalsIgnoreCase("Registration")) {
 
             System.out.print("Username: ");
             String username = scan.next();
@@ -35,6 +37,9 @@ public class Social {
             
             user.Registration(username, email, password);
 
+        }
+        else{
+            System.out.println("Invalid choice.");
         }
     }
 
