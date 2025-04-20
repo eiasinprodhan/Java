@@ -14,7 +14,7 @@ public class MaxMInNumberClassTest {
         int[] myArray = new int[arraySize];
         
         for(int index = 0; index < myArray.length; index++){
-            System.out.print("Enter " + (index+1) + " value: ");
+            System.out.print("Enter " + (index+1) + position(index+1) + " value: ");
             int userInput = scan.nextInt();
             myArray[index] = userInput;
         }
@@ -35,6 +35,19 @@ public class MaxMInNumberClassTest {
         }
         System.out.println("Your max number is: " + maxNumber);
         System.out.println("Your min number is: " + minNumber);
+    }
+    
+    public static String position(int number){
+        switch (number) {
+            case 1:
+                return "st";
+            case 2:
+                return "nd";
+            case 3:
+                return "rd";
+            default:
+                return "th";
+        }
     }
 
 }
