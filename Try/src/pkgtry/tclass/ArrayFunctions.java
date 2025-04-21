@@ -21,7 +21,7 @@ public class ArrayFunctions {
 
 
     public void getMyArray() {
-        System.out.println("Your Array: " + Arrays.toString(myArray));
+        System.out.println("Your array: " + Arrays.toString(myArray));
     }
     
     public void getMax(){
@@ -31,7 +31,7 @@ public class ArrayFunctions {
                 maxNumber = number;
             }
         }
-        System.out.println("Max Number: " + maxNumber);
+        System.out.println("Max number: " + maxNumber);
     }
     
     public void getMin(){
@@ -41,7 +41,7 @@ public class ArrayFunctions {
                 minNumber = number;
             }
         }
-        System.out.println("Min Number: " + minNumber);
+        System.out.println("Min number: " + minNumber);
     }
     
     public void createArray(int arraySize){
