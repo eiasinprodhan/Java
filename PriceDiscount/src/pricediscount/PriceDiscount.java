@@ -23,7 +23,7 @@ public class PriceDiscount {
             discountAmount = 0;
         }
         
-        System.out.println("Discount Amount: " + discountAmount);
+        System.out.println("Discount amount: " + discountAmount);
         System.out.println("Actual price: " + actualPrice);
         
         
