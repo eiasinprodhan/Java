@@ -11,16 +11,16 @@ public class PriceDiscount {
         float price = scan.nextFloat();
         
         final float discount = 0.05f;
-        float actualPrice = 0;
-        float discountAmount = 0;
+        float discountAmount;
+        float actualPrice;
         
         if(price>200){
-            actualPrice = price - (price*discount);
-            discountAmount = price*discount;
+            discountAmount = price * discount;
+            actualPrice = price - discountAmount;
         }
         else{
-            actualPrice = price;
             discountAmount = 0;
+            actualPrice = price;
         }
         
         System.out.println("Discount amount: " + discountAmount);
