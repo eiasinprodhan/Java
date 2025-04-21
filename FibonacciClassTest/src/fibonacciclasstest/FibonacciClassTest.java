@@ -13,7 +13,7 @@ public class FibonacciClassTest {
         int num1 = 0;
         int num2 = 1;
         
-        System.out.print("Enter fibonacci series is: ");
+        System.out.print("Your fibonacci series is: ");
         for(int i = 1; i<=userInput; i++){
             System.out.print(num1 + ", ");
             int num3 = num1 + num2;

@@ -8,13 +8,13 @@ public class MaxMInNumberClassTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         
-        System.out.print("Enter your limit: ");
+        System.out.print("How many numbers you want to enter?: ");
         int arraySize = scan.nextInt();
         
         int[] myArray = new int[arraySize];
         
         for(int index = 0; index < myArray.length; index++){
-            System.out.print("Enter " + (index+1) + position(index+1) + " value: ");
+            System.out.print("Enter " + (index+1) + position(index+1) + " number: ");
             int userInput = scan.nextInt();
             myArray[index] = userInput;
         }
