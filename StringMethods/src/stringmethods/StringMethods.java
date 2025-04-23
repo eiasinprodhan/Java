@@ -10,26 +10,9 @@ public class StringMethods {
         String message = scan.nextLine();
         
         System.out.println("length : " + message.length());
-        System.out.println("charAt : ") + message.charA(1);
         System.out.println("concat : " + message.concat("End"));
         System.out.println("toUpperCase : " + message.toUpperCase());
         System.out.println("toLowerCase : " + message.toLowerCase());
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
     }
 
     private static int lenght() {
