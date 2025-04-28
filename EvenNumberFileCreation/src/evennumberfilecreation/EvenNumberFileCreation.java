@@ -48,7 +48,7 @@ public class EvenNumberFileCreation {
             if (file.exists() == true) {
                 System.err.println("File name already exist.");
             } else {
-                System.out.println("Your file created successfully.");
+                System.out.println(fileName + ".txt created successfully.");
                 PrintWriter pw = new PrintWriter(file);
                 pw.print(result);
                 pw.close();
