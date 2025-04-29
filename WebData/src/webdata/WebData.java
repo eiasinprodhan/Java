@@ -32,10 +32,11 @@ public class WebData {
                     result += link.nextLine();
                 }
                 
-                File file = new File("C:\\Users\\black\\Desktop\\" + fileName + ".html");
+                File file = new File("C:\\Users\\Admin\\Desktop\\" + fileName + ".html");
                 try (PrintWriter pw = new PrintWriter(file)) {
                     pw.println(result);
                     System.out.println("Your file created successfully.");
+                    pw.close();
                 }
             } catch (IOException ex) {
                 Logger.getLogger(WebData.class.getName()).log(Level.SEVERE, null, ex);
