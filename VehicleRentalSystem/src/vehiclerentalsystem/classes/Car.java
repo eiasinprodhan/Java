@@ -1,6 +1,7 @@
-package vehiclerentalsystem;
+package vehiclerentalsystem.classes;
 
-public class Car extends Vehicle{
+public class Car extends Vehicle {
+
     private int numberOfSeats;
     private boolean hasAC;
 
@@ -34,8 +35,12 @@ public class Car extends Vehicle{
         this.hasAC = hasAC;
     }
 
-    void getNumberOfSeats(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void getRentPrice() {
+        if (hasAC == true) {
+            System.out.println("Total Rate: " + (int) (super.getDailyRate() + 500.00) + "(With AC)");
+        } else {
+            System.out.println("Total Rate: " + (int) super.getDailyRate() + "(Without AC)");
+        }
     }
 
 }

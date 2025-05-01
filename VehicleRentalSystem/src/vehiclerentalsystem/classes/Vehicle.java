@@ -1,4 +1,4 @@
-package vehiclerentalsystem;
+package vehiclerentalsystem.classes;
 
 
 public class Vehicle {
@@ -59,9 +59,17 @@ public class Vehicle {
         this.isAvailable = isAvailable;
     }
 
-    @Override
-    public String toString() {
-        return "Vehicle{" + "registrationNumber=" + registrationNumber + ", brand=" + brand + ", model=" + model + ", dailyRate=" + dailyRate + ", isAvailable=" + isAvailable + '}';
+    public void getInfo() {
+        if(isIsAvailable()==true){
+            System.out.println("Registration Number: " + registrationNumber + "\n"
+                    + "Brand: " + brand + "\n"
+                    +"Model:" + model + "\n"
+                    +"Daily Rate: " + dailyRate);
+        }
+        else{
+            System.out.println("Sorry! Not availabe.");
+            System.exit(0);
+        }
     }
     
     
