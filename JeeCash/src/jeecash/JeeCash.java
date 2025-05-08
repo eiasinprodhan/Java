@@ -34,13 +34,13 @@ public class JeeCash {
 
     public static void cashIn() {
         System.out.println("JEE Cash(Cash In)");
-        System.out.println("Your account number");
+        System.out.print("Your account number: ");
         long inputAccountNumber = scan.nextLong();
 
-        System.out.println("Enter Your Pin");
+        System.out.print("Your pin: ");
         int inputPin = scan.nextInt();
 
-        System.out.println("Your amount");
+        System.out.print("Your amount: ");
         long inputAmount = scan.nextLong();
 
         account.cashIn(inputAccountNumber, inputPin, inputAmount);
@@ -48,13 +48,13 @@ public class JeeCash {
 
     public static void cashOut() {
         System.out.println("JEE Cash(Cash Out)");
-        System.out.println("Enter your account number");
+        System.out.print("Your account number: ");
         long inputAccountNumber = scan.nextLong();
 
-        System.out.println("Enter your pin");
+        System.out.print("Enter your pin: ");
         int inputPin = scan.nextInt();
 
-        System.out.println("Enter your amount");
+        System.out.print("Your amount: ");
         long inputAmount = scan.nextLong();
 
         account.cashOut(inputAccountNumber, inputPin, inputAmount);
@@ -63,16 +63,16 @@ public class JeeCash {
 
     public static void changePin() {
         System.out.println("JEE Cash(Change Pin)");
-        System.out.println("Enter your account number");
+        System.out.print("Your account number: ");
         long inputAccountNumber = scan.nextLong();
 
-        System.out.println("Enter your old pin");
+        System.out.print("Your old pin: ");
         int oldPin = scan.nextInt();
 
-        System.out.println("Enter your new pin");
+        System.out.print("Your new pin: ");
         int newPin = scan.nextInt();
 
-        System.out.println("Enter your new pin again");
+        System.out.print("Your new pin again: ");
         int newPinAgain = scan.nextInt();
 
         account.changePin(inputAccountNumber, oldPin, newPin, newPinAgain);
@@ -81,10 +81,10 @@ public class JeeCash {
 
     public static void accountDetails() {
         System.out.println("JEE Cash(Account Detials)");
-        System.out.println("Enter your account number");
+        System.out.print("Your account number: ");
         long inputAccountDetails = scan.nextLong();
 
-        System.out.println("Enter your pin");
+        System.out.print("Your pin: ");
         int inputPin = scan.nextInt();
 
         account.accountDetails(inputAccountDetails, inputPin);
