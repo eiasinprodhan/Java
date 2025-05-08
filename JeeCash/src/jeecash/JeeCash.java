@@ -1,12 +1,13 @@
 package jeecash;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import jeecash.classes.Account;
 
 public class JeeCash {
 
     public static Scanner scan = new Scanner(System.in);
-    public static Account account = new Account(1287470, 100, "Eiasin Prodhan", 63342);
+    public static Account account = new Account(1287470, 10000000, "Eiasin Prodhan", 12345);
 
     public static void main(String[] args) {
         home();
