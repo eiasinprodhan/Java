@@ -7,22 +7,22 @@ public class Account {
     private String name;
     private int pin;
     
-     Account[] setData = {
-            new Account(1287039, 100, "Md. Atiqul Islam", 12345),
-            new Account(1287046, 200, "Halima Akter", 12345),
-            new Account(1287271, 300, "Atiqur Rahman", 12345),
-            new Account(1287283, 400, "Md. Arifur Rahman", 12345),
-            new Account(1287315, 500, "Sathe Khanom", 12345),
-            new Account(1287462, 600, "Abdullah Al Masud", 12345),
-            new Account(1287470, 10000000, "Eiasin Prodhan", 12345),
-            new Account(1287519, 700, "Md. Rahmatullah", 12345),
-            new Account(1287528, 800, "Md. Rahim Khan", 12345),
-            new Account(1287647, 900, "Md. Sadiar Rahman", 12345),
-            new Account(1287675, 1000, "Md. Rakib Islam", 12345),
-            new Account(1287748, 1100, "Samim Junayet Istiaq", 12345),
-            new Account(1287759, 1200, "Rejaul Karim", 12345),
-            new Account(1287799, 1300, "Md. Parvej Hossen", 12345)
-        };
+//     Account[] setData = {
+//            new Account(1287039, 100, "Md. Atiqul Islam", 12345),
+//            new Account(1287046, 200, "Halima Akter", 12345),
+//            new Account(1287271, 300, "Atiqur Rahman", 12345),
+//            new Account(1287283, 400, "Md. Arifur Rahman", 12345),
+//            new Account(1287315, 500, "Sathe Khanom", 12345),
+//            new Account(1287462, 600, "Abdullah Al Masud", 12345),
+//            new Account(1287470, 10000000, "Eiasin Prodhan", 12345),
+//            new Account(1287519, 700, "Md. Rahmatullah", 12345),
+//            new Account(1287528, 800, "Md. Rahim Khan", 12345),
+//            new Account(1287647, 900, "Md. Sadiar Rahman", 12345),
+//            new Account(1287675, 1000, "Md. Rakib Islam", 12345),
+//            new Account(1287748, 1100, "Samim Junayet Istiaq", 12345),
+//            new Account(1287759, 1200, "Rejaul Karim", 12345),
+//            new Account(1287799, 1300, "Md. Parvej Hossen", 12345)
+//        };
 
     public Account() {
     }
@@ -73,7 +73,7 @@ public class Account {
                     long oldBalance = balance;
                     balance += inputAmount;
                     setBalance(balance);
-                    System.out.println("Cash In successfull. Your old balance was "+ oldBalance +" .Now you have " + balance + " taka.");
+                    System.out.println(name + ", your cash In successfull. Your old balance was "+ oldBalance +" .Now you have " + balance + " taka.");
                 } else {
                     System.err.println("You have entered invalid value.");
                 }
@@ -93,7 +93,7 @@ public class Account {
                     long oldBalance = balance;
                     balance -= inputAmount;
                     setBalance(balance);
-                    System.out.println("Cash Out Successfull. Your old balance was "+ oldBalance +" .Now you have " + balance + " taka.");
+                    System.out.println(name + ", your cash out successfull. Your old balance was "+ oldBalance +" .Now you have " + balance + " taka.");
                 } else {
                     System.err.println("Insufficient balance or invalid input.");
                 }
