@@ -13,7 +13,7 @@ public class JeeCash {
     }
 
     public static void home() {
-        System.out.println("JEE Cash(Bank For Java Programmers)");
+        System.out.println("JEE Cash(Trusted online bank for Java programmers)");
         System.out.println("1.Cash In\n2.Cash Out\n3.Change Pin\n4.Account Details\n5.Close");
         int inputHome = scan.nextInt();
         switch (inputHome) {
@@ -28,45 +28,73 @@ public class JeeCash {
             case 5 ->
                 exitMenu();
             default ->
-                System.err.println("Invalid Choice");
+                System.err.println("Invalid choice or input");
         }
     }
 
     public static void cashIn() {
-        System.out.println("Enter Your Account Number");
+        System.out.println("JEE Cash(Cash In)");
+        System.out.println("Your account number");
         long inputAccountNumber = scan.nextLong();
 
-        System.out.println("Enter Your Amount");
+        System.out.println("Enter Your Pin");
+        int inputPin = scan.nextInt();
+
+        System.out.println("Your amount");
         long inputAmount = scan.nextLong();
 
-        account.cashIn(inputAccountNumber, inputAmount);
+        account.cashIn(inputAccountNumber, inputPin, inputAmount);
     }
 
     public static void cashOut() {
-        System.out.println("Enter Your Account Number");
+        System.out.println("JEE Cash(Cash Out)");
+        System.out.println("Enter your account number");
         long inputAccountNumber = scan.nextLong();
 
-        System.out.println("Enter Your Amount");
+        System.out.println("Enter your pin");
+        int inputPin = scan.nextInt();
+
+        System.out.println("Enter your amount");
         long inputAmount = scan.nextLong();
 
-        account.cashOut(inputAccountNumber, inputAmount);
+        account.cashOut(inputAccountNumber, inputPin, inputAmount);
 
     }
 
     public static void changePin() {
-        System.out.println("Sorry! We are working on it.");
+        System.out.println("JEE Cash(Change Pin)");
+        System.out.println("Enter your account number");
+        long inputAccountNumber = scan.nextLong();
+
+        System.out.println("Enter your old pin");
+        int oldPin = scan.nextInt();
+
+        System.out.println("Enter your new pin");
+        int newPin = scan.nextInt();
+
+        System.out.println("Enter your new pin again");
+        int newPinAgain = scan.nextInt();
+
+        account.changePin(inputAccountNumber, oldPin, newPin, newPinAgain);
 
     }
 
     public static void accountDetails() {
-        System.out.println("Enter Your Account Number");
+        System.out.println("JEE Cash(Account Detials)");
+        System.out.println("Enter your account number");
         long inputAccountDetails = scan.nextLong();
-        account.accountDetails(inputAccountDetails);
+
+        System.out.println("Enter your pin");
+        int inputPin = scan.nextInt();
+
+        account.accountDetails(inputAccountDetails, inputPin);
 
     }
 
     public static void exitMenu() {
-        System.out.println("Closed Successfully.");
+        System.err.println("Closed successfully.");
+        scan.close();
+        System.exit(0);
 
     }
 
