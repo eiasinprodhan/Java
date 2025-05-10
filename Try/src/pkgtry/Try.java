@@ -1,18 +1,19 @@
 package pkgtry;
 
-import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 
 public class Try {
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        String sentence = "Hello World";
-        char[] letters = sentence.toCharArray();
+        ExecutorService executor = Executors.newFixedThreadPool(50);
         
-        System.out.print("[");
-        for (char c : letters) {
-            System.out.print(c + " ,");
+        for(int i = 1; i <= 50; i++){
+            Runnable task = new JFreame(i);
+            executor.submit(task);
         }
-        System.out.println("]");
+        
+        executor.shutdown();
     }
 }
