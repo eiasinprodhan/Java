@@ -10,9 +10,9 @@ public class ThreadPools {
    
     public static void main(String[] args) {
         
-        ExecutorService executor = Executors.newFixedThreadPool(16);  
+        ExecutorService executor = Executors.newFixedThreadPool(50);  
         
-        for (int i = 1; i > 0; i++) {
+        for (int i = 1; i <= 500; i++) {
             Runnable task = new MyTask(i);
             executor.submit(task);
         }
