@@ -36,6 +36,7 @@ public class DVD extends Item{
 
     @Override
     public void getDetails() {
+        System.out.println("DVD's Details");
         super.getDetails();
         System.out.println("Director: " + director
         +"Runtime: " + runtime);

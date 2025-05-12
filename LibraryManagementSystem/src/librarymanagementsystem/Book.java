@@ -36,6 +36,7 @@ public class Book extends Item{
 
     @Override
     public void getDetails() {
+        System.out.println("Book's Details");
         super.getDetails();
         System.out.println("ISBN: " + isbn
         + "\nGenre: " + genre);

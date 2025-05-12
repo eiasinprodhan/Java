@@ -36,6 +36,7 @@ public class Magazine extends Item{
 
     @Override
     public void getDetails() {
+        System.out.println("Magazine's Details");
         super.getDetails();
         System.out.println("Issue Number: " + issueNumber
         +"\nFrequency: " + frequency);
