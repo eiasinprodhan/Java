@@ -1,0 +1,2 @@
+1. You have to download sql.jar and mysql-connector-j-9.3.0.jar from internet and add in your library.
+2. Then go to Services > Database > MySQL Server to connect.
