@@ -1,0 +1,4 @@
+1. Install JDK 17 Or Upper Version
+2. Install IDE(Integrated Development Environment)
+Example: NetBeans, IntelliJ IDEA, Eclipse, Android Studio
+
