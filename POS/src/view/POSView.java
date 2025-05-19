@@ -11,7 +11,7 @@ import dao.CustomersDao;
  * @author User
  */
 public class POSView extends javax.swing.JFrame {
-    
+
     CustomersDao cd = new CustomersDao();
 
     /**
@@ -873,19 +873,19 @@ public class POSView extends javax.swing.JFrame {
     private void tableCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableCustomersMouseClicked
         // TODO add your handling code here:
         int rowIndex = tableCustomers.getSelectedRow();
-        
+
         String id = tableCustomers.getModel().getValueAt(rowIndex, 0).toString();
         String name = tableCustomers.getModel().getValueAt(rowIndex, 1).toString();
         String email = tableCustomers.getModel().getValueAt(rowIndex, 2).toString();
         String phone = tableCustomers.getModel().getValueAt(rowIndex, 3).toString();
         String address = tableCustomers.getModel().getValueAt(rowIndex, 4).toString();
-        
+
         txtCustomersID.setText(id);
         txtCustomersName.setText(name);
         txtCustomersEmail.setText(email);
         txtCustomersPhone.setText(phone);
         txtCustomersAddress.setText(address);
-      
+
     }//GEN-LAST:event_tableCustomersMouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
@@ -910,19 +910,13 @@ public class POSView extends javax.swing.JFrame {
         String address = txtCustomersAddress.getText().trim();
         cd.editCustomer(id, name, email, phone, address);
         cd.showCustomers(tableCustomers);
-        
+
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void btnCustomerSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomerSearchMouseClicked
         // TODO add your handling code here:
         int id = Integer.parseInt(txtCustomersID.getText().trim());
-        String address = txtCustomersAddress.getText().trim();
-        if(id>0){
-            cd.showCustomersById(tableCustomers, id);
-        }
-        else if(address.length()>0){
-            cd.showCustomersByAddress(tableCustomers, address);
-        }
+        cd.showCustomersById(tableCustomers, id);
     }//GEN-LAST:event_btnCustomerSearchMouseClicked
 
     private void txtCustomersIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustomersIDActionPerformed
@@ -970,8 +964,8 @@ public class POSView extends javax.swing.JFrame {
             new POSView().setVisible(true);
         });
     }
-    
-    public void reset(){
+
+    public void reset() {
         txtCustomersID.setText("");
         txtCustomersName.setText("");
         txtCustomersEmail.setText("");
