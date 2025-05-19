@@ -8,10 +8,10 @@ import java.util.logging.Logger;
 
 public class DBUtil {
     private Connection connection = null;
-    private final String url = "jdbc:mysql://sql200.ezyro.com:3306/ezyro_39014709_swing";
-    private final String user = "ezyro_39014709";
-    private final String password = "fa1d9dd23a0183";
-    private String driver = "com.mysql.cj.jdbc.Driver";
+    private final String url = "jdbc:mysql://localhost:3307/pos";
+    private final String user = "root";
+    private final String password = "12345";
+    private final String driver = "com.mysql.cj.jdbc.Driver";
     
     public Connection getConnection(){
         try {
