@@ -165,6 +165,11 @@ public class POSView extends javax.swing.JFrame {
                 btnCustomersMouseClicked(evt);
             }
         });
+        btnCustomers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCustomersActionPerformed(evt);
+            }
+        });
 
         btnSuppliers.setBackground(new java.awt.Color(102, 0, 153));
         btnSuppliers.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -664,7 +669,7 @@ public class POSView extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 962, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(tabCustomersLayout.createSequentialGroup()
-                .addGap(418, 418, 418)
+                .addGap(451, 451, 451)
                 .addComponent(btnCustomerRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -705,10 +710,10 @@ public class POSView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel15)))
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCustomerRefresh)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
 
         tabPOS.addTab("Customers", tabCustomers);
@@ -928,6 +933,10 @@ public class POSView extends javax.swing.JFrame {
         // TODO add your handling code here:
         cd.showCustomers(tableCustomers);
     }//GEN-LAST:event_btnCustomerRefreshMouseClicked
+
+    private void btnCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomersActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCustomersActionPerformed
 
     /**
      * @param args the command line arguments
