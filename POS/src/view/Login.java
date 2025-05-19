@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Admin
@@ -111,6 +113,9 @@ public class Login extends javax.swing.JFrame {
             POSView pv = new POSView();
             this.dispose();
             pv.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Username or password is incorrect.");
         }
     }//GEN-LAST:event_btnLoginMouseClicked
 
