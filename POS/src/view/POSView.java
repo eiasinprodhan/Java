@@ -532,7 +532,7 @@ public class POSView extends javax.swing.JFrame {
         txtCustomersAddress.setText(" ");
         txtCustomersAddress.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(102, 0, 153), new java.awt.Color(102, 0, 153)));
 
-        jButton5.setBackground(new java.awt.Color(102, 0, 153));
+        jButton5.setBackground(new java.awt.Color(0, 153, 51));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Save");
@@ -557,7 +557,7 @@ public class POSView extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(102, 0, 153));
+        jButton7.setBackground(new java.awt.Color(255, 0, 255));
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Edit");
@@ -572,7 +572,7 @@ public class POSView extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(0, 0, 204));
+        jButton8.setBackground(new java.awt.Color(0, 0, 0));
         jButton8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Reset");
@@ -611,11 +611,11 @@ public class POSView extends javax.swing.JFrame {
             }
         });
 
-        btnCustomerRefresh.setBackground(new java.awt.Color(0, 153, 153));
+        btnCustomerRefresh.setBackground(new java.awt.Color(0, 51, 255));
         btnCustomerRefresh.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCustomerRefresh.setForeground(new java.awt.Color(255, 255, 255));
         btnCustomerRefresh.setText("Refresh");
-        btnCustomerRefresh.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCustomerRefresh.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCustomerRefresh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCustomerRefreshMouseClicked(evt);
@@ -677,7 +677,7 @@ public class POSView extends javax.swing.JFrame {
             tabCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabCustomersLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(tabCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tabCustomersLayout.createSequentialGroup()
                         .addGap(89, 89, 89)
@@ -713,7 +713,7 @@ public class POSView extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCustomerRefresh)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         tabPOS.addTab("Customers", tabCustomers);
