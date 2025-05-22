@@ -14,17 +14,17 @@ public class CURDClass {
     public static String sql = "";
 
     public static void main(String[] args) {
+        System.out.println("----------After Insert----------");
         saveStudent("Eiasin Prodhan", 10);
-        System.err.println("After Insert");
-        viewStudent();
-        
-        updateStudent(1, "Foysal Ahmed", 5);
-        System.err.println("After Update");
         viewStudent();
 
+        System.out.println("----------After Update----------");
+        updateStudent(1, "Foysal Ahmed", 5);
+        viewStudent();
+
+        System.out.println("----------After Delete----------");
         deleteStudent(1);
-        System.err.println("After Delete");
-         viewStudent();
+        viewStudent();
 
     }
 
@@ -57,7 +57,6 @@ public class CURDClass {
                 System.out.println("Roll: " + roll
                         + "\nName: " + name
                         + "\nClass: " + classIn
-                        + "\n------------------------------"
                 );
             }
             ps.close();
@@ -77,7 +76,9 @@ public class CURDClass {
             ps.executeUpdate();
             ps.close();
             dc.getConnection().close();
+            System.out.println("Student updated successfully.");
         } catch (SQLException ex) {
+            System.err.println("Student not updated.");
             Logger.getLogger(CURDClass.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -91,6 +92,7 @@ public class CURDClass {
             ps.executeUpdate();
             ps.close();
             dc.getConnection().close();
+            System.err.println("Student deleted");
         } catch (SQLException ex) {
             Logger.getLogger(CURDClass.class.getName()).log(Level.SEVERE, null, ex);
         }
