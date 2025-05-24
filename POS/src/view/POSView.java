@@ -135,10 +135,12 @@ public class POSView extends javax.swing.JFrame {
         jLabel2.setText("Main Menu");
 
         btnDashboard.setBackground(new java.awt.Color(51, 0, 204));
-        btnDashboard.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDashboard.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnDashboard.setForeground(new java.awt.Color(255, 255, 255));
         btnDashboard.setText("Dashboard");
         btnDashboard.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnDashboard.setBorderPainted(false);
+        btnDashboard.setFocusPainted(false);
         btnDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnDashboardMouseClicked(evt);
@@ -146,10 +148,12 @@ public class POSView extends javax.swing.JFrame {
         });
 
         btnProducts.setBackground(new java.awt.Color(102, 0, 153));
-        btnProducts.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnProducts.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnProducts.setForeground(new java.awt.Color(255, 255, 255));
         btnProducts.setText("Products");
         btnProducts.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnProducts.setBorderPainted(false);
+        btnProducts.setFocusPainted(false);
         btnProducts.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnProductsMouseClicked(evt);
@@ -157,10 +161,12 @@ public class POSView extends javax.swing.JFrame {
         });
 
         btnCustomers.setBackground(new java.awt.Color(102, 0, 153));
-        btnCustomers.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCustomers.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnCustomers.setForeground(new java.awt.Color(255, 255, 255));
         btnCustomers.setText("Customers");
         btnCustomers.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCustomers.setBorderPainted(false);
+        btnCustomers.setFocusPainted(false);
         btnCustomers.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCustomersMouseClicked(evt);
@@ -173,10 +179,12 @@ public class POSView extends javax.swing.JFrame {
         });
 
         btnSuppliers.setBackground(new java.awt.Color(102, 0, 153));
-        btnSuppliers.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSuppliers.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSuppliers.setForeground(new java.awt.Color(255, 255, 255));
         btnSuppliers.setText("Suppliers");
         btnSuppliers.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSuppliers.setBorderPainted(false);
+        btnSuppliers.setFocusPainted(false);
         btnSuppliers.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSuppliersMouseClicked(evt);
@@ -184,10 +192,12 @@ public class POSView extends javax.swing.JFrame {
         });
 
         btnCategories.setBackground(new java.awt.Color(102, 0, 153));
-        btnCategories.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCategories.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnCategories.setForeground(new java.awt.Color(255, 255, 255));
         btnCategories.setText("Categories");
         btnCategories.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCategories.setBorderPainted(false);
+        btnCategories.setFocusPainted(false);
         btnCategories.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCategoriesMouseClicked(evt);
@@ -195,10 +205,12 @@ public class POSView extends javax.swing.JFrame {
         });
 
         btnPurchases.setBackground(new java.awt.Color(102, 0, 153));
-        btnPurchases.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnPurchases.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnPurchases.setForeground(new java.awt.Color(255, 255, 255));
         btnPurchases.setText("Purchases");
         btnPurchases.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnPurchases.setBorderPainted(false);
+        btnPurchases.setFocusPainted(false);
         btnPurchases.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPurchasesMouseClicked(evt);
@@ -206,10 +218,12 @@ public class POSView extends javax.swing.JFrame {
         });
 
         btnSales.setBackground(new java.awt.Color(102, 0, 153));
-        btnSales.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSales.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSales.setForeground(new java.awt.Color(255, 255, 255));
         btnSales.setText("Sales");
         btnSales.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSales.setBorderPainted(false);
+        btnSales.setFocusPainted(false);
         btnSales.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSalesMouseClicked(evt);
@@ -217,10 +231,12 @@ public class POSView extends javax.swing.JFrame {
         });
 
         btnReport.setBackground(new java.awt.Color(255, 0, 0));
-        btnReport.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnReport.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnReport.setForeground(new java.awt.Color(255, 255, 255));
         btnReport.setText("Report");
         btnReport.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnReport.setBorderPainted(false);
+        btnReport.setFocusPainted(false);
         btnReport.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnReportMouseClicked(evt);
@@ -228,10 +244,12 @@ public class POSView extends javax.swing.JFrame {
         });
 
         btnStock.setBackground(new java.awt.Color(102, 0, 153));
-        btnStock.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnStock.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnStock.setForeground(new java.awt.Color(255, 255, 255));
         btnStock.setText("Stock");
         btnStock.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnStock.setBorderPainted(false);
+        btnStock.setFocusPainted(false);
         btnStock.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnStockMouseClicked(evt);
@@ -537,6 +555,7 @@ public class POSView extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Save");
+        jButton5.setFocusPainted(false);
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton5MouseClicked(evt);
@@ -552,6 +571,7 @@ public class POSView extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Delete");
+        jButton6.setFocusPainted(false);
         jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton6MouseClicked(evt);
@@ -562,6 +582,7 @@ public class POSView extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Edit");
+        jButton7.setFocusPainted(false);
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton7MouseClicked(evt);
@@ -577,6 +598,7 @@ public class POSView extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Reset");
+        jButton8.setFocusPainted(false);
         jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton8MouseClicked(evt);
@@ -606,6 +628,7 @@ public class POSView extends javax.swing.JFrame {
         btnCustomerSearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCustomerSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnCustomerSearch.setText("Search");
+        btnCustomerSearch.setFocusPainted(false);
         btnCustomerSearch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCustomerSearchMouseClicked(evt);
