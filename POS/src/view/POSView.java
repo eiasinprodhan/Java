@@ -470,6 +470,7 @@ public class POSView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(102, 0, 204), new java.awt.Color(51, 0, 153)));
 
         javax.swing.GroupLayout tabProductsLayout = new javax.swing.GroupLayout(tabProducts);
         tabProducts.setLayout(tabProductsLayout);
@@ -789,7 +790,7 @@ public class POSView extends javax.swing.JFrame {
                         .addComponent(jButton7)
                         .addComponent(jButton6)
                         .addComponent(btnCustomerRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
