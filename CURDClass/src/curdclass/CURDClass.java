@@ -53,7 +53,7 @@ public class CURDClass {
                 int roll = rs.getInt("roll");
                 String name = rs.getString("name");
                 int classIn = rs.getInt("classIn");
-                System.out.println("Roll: " + roll + "\nName: " + name + "\nClass In: " + classIn);
+                System.out.println("Roll: " + roll + ", Name: " + name + ", Class In: " + classIn);
             }
 
             ps.close();
