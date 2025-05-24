@@ -14,18 +14,17 @@ public class CURDClass {
     public static String sql = "";
 
     public static void main(String[] args) {
-        System.out.println("----------After Insert----------");
+        System.out.println("-----After Insert-----");
         saveStudent("Eiasin Prodhan", 10);
-        viewStudent();
-
-        System.out.println("----------After Update----------");
-        updateStudent(1, "Foysal Ahmed", 5);
-        viewStudent();
-
-        System.out.println("----------After Delete----------");
+        showStudent();
+        
+        System.out.println("-----After Edit-----");
+        editStudent(1, "Foysal Ahmed", 15);
+        showStudent();
+        
+        System.out.println("-----After Delete-----");
         deleteStudent(1);
-        viewStudent();
-
+        showStudent();
     }
 
     public static void saveStudent(String name, int classIn) {
@@ -37,14 +36,15 @@ public class CURDClass {
             ps.executeUpdate();
             ps.close();
             dc.getConnection().close();
-            System.out.println("Student added successfully.");
+            System.out.println("New student added successfully.");
         } catch (SQLException ex) {
-            System.err.println("Studebt not added.");
+            System.out.println("Unable to add new student.");
+            Logger.getLogger(CURDClass.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
-    public static void viewStudent() {
+    public static void showStudent() {
         sql = "select * from studentdetails";
         try {
             ps = dc.getConnection().prepareStatement(sql);
@@ -53,37 +53,18 @@ public class CURDClass {
                 int roll = rs.getInt("roll");
                 String name = rs.getString("name");
                 int classIn = rs.getInt("classIn");
-
-                System.out.println("Roll: " + roll
-                        + "\nName: " + name
-                        + "\nClass: " + classIn
-                );
+                System.out.println("Roll: " + roll + "\nName: " + name + "\nClass In: " + classIn);
             }
-            ps.close();
-            dc.getConnection().close();
-        } catch (SQLException ex) {
-            Logger.getLogger(CURDClass.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
 
-    public static void updateStudent(int roll, String name, int classIn) {
-        sql = "update studentdetails set name=?, classIn=? where roll=?";
-        try {
-            ps = dc.getConnection().prepareStatement(sql);
-            ps.setString(1, name);
-            ps.setInt(2, classIn);
-            ps.setInt(3, roll);
-            ps.executeUpdate();
             ps.close();
             dc.getConnection().close();
-            System.out.println("Student updated successfully.");
+
         } catch (SQLException ex) {
-            System.err.println("Student not updated.");
             Logger.getLogger(CURDClass.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
-
+    
     public static void deleteStudent(int roll) {
         sql = "delete from studentdetails where roll=?";
         try {
@@ -92,10 +73,29 @@ public class CURDClass {
             ps.executeUpdate();
             ps.close();
             dc.getConnection().close();
-            System.err.println("Student deleted");
+            System.out.println("Student deleted successfully.");
         } catch (SQLException ex) {
+            System.out.println("Unable to delete student.");
             Logger.getLogger(CURDClass.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
+    
+    public static void editStudent(int roll, String name, int classIn){
+        sql = "update studentdetails set name=?, classIn=? where roll = ?";
+        try {
+            ps = dc.getConnection().prepareStatement(sql);
+            ps.setString(1, name);
+            ps.setInt(2, classIn);
+            ps.setInt(3, roll);
+            ps.executeUpdate();
+            ps.close();
+            dc.getConnection().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CURDClass.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
+
 }
