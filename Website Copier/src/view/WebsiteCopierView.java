@@ -54,23 +54,18 @@ public class WebsiteCopierView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 51, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Website Copier");
+        jLabel1.setText("#WEBSITE COPIER#");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Enter Your Web Address");
-
-        txtWebAddress.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtWebAddressActionPerformed(evt);
-            }
-        });
+        jLabel2.setText("# Enter Your Web Address");
 
         btnCopy.setBackground(new java.awt.Color(255, 51, 102));
         btnCopy.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCopy.setForeground(new java.awt.Color(255, 255, 255));
         btnCopy.setText("Copy");
+        btnCopy.setFocusPainted(false);
         btnCopy.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCopyMouseClicked(evt);
@@ -80,13 +75,7 @@ public class WebsiteCopierView extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Enter Your File Name");
-
-        txtFileName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFileNameActionPerformed(evt);
-            }
-        });
+        jLabel3.setText("# Enter Your File Name");
 
         jLabel4.setForeground(new java.awt.Color(255, 0, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -130,18 +119,18 @@ public class WebsiteCopierView extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtWebAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addGap(9, 9, 9)
                 .addComponent(txtFileName, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(27, 27, 27)
                 .addComponent(btnCopy, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -158,10 +147,6 @@ public class WebsiteCopierView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtWebAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtWebAddressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtWebAddressActionPerformed
 
     private void btnCopyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCopyMouseClicked
         // TODO add your handling code here:
@@ -194,11 +179,9 @@ public class WebsiteCopierView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Website Copied Failed.");
             Logger.getLogger(WebsiteCopierView.class.getName()).log(Level.SEVERE, null, ex);
         }
+        txtWebAddress.setText("");
+        txtFileName.setText("");
     }//GEN-LAST:event_btnCopyMouseClicked
-
-    private void txtFileNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFileNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFileNameActionPerformed
 
     /**
      * @param args the command line arguments
