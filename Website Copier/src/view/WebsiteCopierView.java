@@ -169,6 +169,8 @@ public class WebsiteCopierView extends javax.swing.JFrame {
                     pw.println(result);
                     JOptionPane.showMessageDialog(null, "Website copied successfully. Saved In C://Users/Admin/Desktop/" + fileName + ".html");
                     pw.close();
+                    txtWebAddress.setText("");
+                    txtFileName.setText("");
                 }
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, "Website Copied Failed.");
@@ -179,8 +181,7 @@ public class WebsiteCopierView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Website Copied Failed.");
             Logger.getLogger(WebsiteCopierView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        txtWebAddress.setText("");
-        txtFileName.setText("");
+
     }//GEN-LAST:event_btnCopyMouseClicked
 
     /**

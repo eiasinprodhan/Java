@@ -14,19 +14,21 @@ public class CURDExam {
     public static String sql = "";
 
     public static void main(String[] args) {
-        System.out.println("----------After Insert----------");
         saveEmployee("Eiasin Prodhan", "CEO", 1000000f);
         saveEmployee("Parvej Hossain", "Senior Developer", 1000000f);
+        System.out.println("----------Read after insert----------");
         viewEmployee();
 
         System.out.println("");
-        System.out.println("----------After Update----------");
+        System.out.println("");
         updateEmployee(2, "Rakib Islam", "Junior Developer", 500000f);
+        System.out.println("----------Read after update----------");
         viewEmployee();
 
         System.out.println("");
-        System.out.println("----------After Delete----------");
+        System.out.println("");
         deleteEmployee(2);
+        System.out.println("----------Read after delete----------");
         viewEmployee();
     }
 
