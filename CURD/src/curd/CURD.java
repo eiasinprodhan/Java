@@ -14,17 +14,19 @@ public class CURD {
     public static String sql = "";
 
     public static void main(String[] args) {
+        System.out.println("----------After Insert----------");
         saveEmployee("Eiasin Prodhan", "eiasinprodhan@gmail.com", "01888118271", 1000000f);
         saveEmployee("Parvej Hossain", "parvejhossain@gmail.com", "01886598487", 100f);
-        System.out.println("After Insert");
         viewEmployee();
 
-        updateEmployee(2, "Parvej Hossain", "parvejhossain@gmail.com", "01886598487", 1000000f);
-        System.out.println("After Update");
+        System.out.println("");
+        System.out.println("----------After Update----------");
+        updateEmployee(2, "Rakib Islam", "rakibislam@gmail.com", "0186583215", 1000000f);
         viewEmployee();
         
+        System.out.println("");
+        System.out.println("----------After Delete----------");
         deleteEmployee(2);
-        System.out.println("After Delete");
         viewEmployee();
 
     }
@@ -40,9 +42,9 @@ public class CURD {
             ps.executeUpdate();
             ps.close();
             dc.getConnection().close();
-            System.out.println("Data inserted successfully.");
+            System.out.println("Employee added successfully.");
         } catch (SQLException ex) {
-            System.err.println("Data inserting unsuccessful.");
+            System.err.println("Employee adding failed");
         }
 
     }
@@ -59,11 +61,10 @@ public class CURD {
                 String phone = rs.getString("phone");
                 float salary = rs.getFloat("salary");
                 System.out.println("ID: " + id
-                        + "\nName: " + name
-                        + "\nEmail: " + email
-                        + "\nPhone: " + phone
-                        + "\nSalary: " + salary
-                        + "\n------------------------------"
+                        + ", Name: " + name
+                        + ", Email: " + email
+                        + ", Phone: " + phone
+                        + ", Salary: " + salary
                 );
             }
             ps.close();
@@ -85,7 +86,9 @@ public class CURD {
             ps.executeUpdate();
             ps.close();
             dc.getConnection().close();
+            System.out.println("Employee no. "+ id +" updated successfully.");
         } catch (SQLException ex) {
+            System.err.println("Employee no. "+ id +" updating failed.");
             Logger.getLogger(CURD.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -99,7 +102,9 @@ public class CURD {
             ps.executeUpdate();
             ps.close();
             dc.getConnection().close();
+            System.out.println("Employee no. "+ id +" deleted successfully.");
         } catch (SQLException ex) {
+            System.err.println("Employee no. "+ id +" deleting failed.");
             Logger.getLogger(CURD.class.getName()).log(Level.SEVERE, null, ex);
         }
 

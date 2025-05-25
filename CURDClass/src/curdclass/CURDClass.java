@@ -14,15 +14,15 @@ public class CURDClass {
     public static String sql = "";
 
     public static void main(String[] args) {
-        System.out.println("-----After Insert-----");
+        System.out.println("----------After Insert----------");
         saveStudent("Eiasin Prodhan", 10);
         showStudent();
         
-        System.out.println("-----After Edit-----");
+        System.out.println("----------After Edit----------");
         editStudent(1, "Foysal Ahmed", 15);
         showStudent();
         
-        System.out.println("-----After Delete-----");
+        System.out.println("----------After Delete----------");
         deleteStudent(1);
         showStudent();
     }
