@@ -4,7 +4,9 @@
  */
 package view;
 
+import dao.CategoryDao;
 import dao.CustomersDao;
+import dao.ProductsDAO;
 
 /**
  *
@@ -13,6 +15,8 @@ import dao.CustomersDao;
 public class POSView extends javax.swing.JFrame {
 
     CustomersDao cd = new CustomersDao();
+    ProductsDAO pd = new ProductsDAO();
+    CategoryDao cd1 = new CategoryDao();
 
     /**
      * Creates new form POSView
@@ -20,6 +24,7 @@ public class POSView extends javax.swing.JFrame {
     public POSView() {
         initComponents();
         cd.showCustomers(tableCustomers);
+        cd1.showCategory(tableCategories);
     }
 
     /**
@@ -101,15 +106,15 @@ public class POSView extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtCategoryID = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        txtCategoryName = new javax.swing.JTextField();
+        btnCategorySave = new javax.swing.JButton();
+        btnCategotyEdit = new javax.swing.JButton();
+        btnCategotyDelete = new javax.swing.JButton();
+        btnCategotyReset = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tableCategories = new javax.swing.JTable();
         tabPurchases = new javax.swing.JPanel();
         tabSales = new javax.swing.JPanel();
         tabStock = new javax.swing.JPanel();
@@ -853,27 +858,32 @@ public class POSView extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel18.setText("Category Name");
 
-        jButton9.setBackground(new java.awt.Color(0, 204, 0));
-        jButton9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Save");
+        btnCategorySave.setBackground(new java.awt.Color(0, 204, 0));
+        btnCategorySave.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCategorySave.setForeground(new java.awt.Color(255, 255, 255));
+        btnCategorySave.setText("Save");
+        btnCategorySave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCategorySaveMouseClicked(evt);
+            }
+        });
 
-        jButton10.setBackground(new java.awt.Color(0, 51, 255));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Edit");
+        btnCategotyEdit.setBackground(new java.awt.Color(0, 51, 255));
+        btnCategotyEdit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCategotyEdit.setForeground(new java.awt.Color(255, 255, 255));
+        btnCategotyEdit.setText("Edit");
 
-        jButton11.setBackground(new java.awt.Color(204, 0, 0));
-        jButton11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(255, 255, 255));
-        jButton11.setText("Delete");
+        btnCategotyDelete.setBackground(new java.awt.Color(204, 0, 0));
+        btnCategotyDelete.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCategotyDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnCategotyDelete.setText("Delete");
 
-        jButton12.setBackground(new java.awt.Color(255, 153, 0));
-        jButton12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton12.setForeground(new java.awt.Color(255, 255, 255));
-        jButton12.setText("Reset");
+        btnCategotyReset.setBackground(new java.awt.Color(255, 153, 0));
+        btnCategotyReset.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCategotyReset.setForeground(new java.awt.Color(255, 255, 255));
+        btnCategotyReset.setText("Reset");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tableCategories.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -884,34 +894,34 @@ public class POSView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(tableCategories);
 
         javax.swing.GroupLayout tabCategoriesLayout = new javax.swing.GroupLayout(tabCategories);
         tabCategories.setLayout(tabCategoriesLayout);
         tabCategoriesLayout.setHorizontalGroup(
             tabCategoriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 1007, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(tabCategoriesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tabCategoriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(tabCategoriesLayout.createSequentialGroup()
                         .addGroup(tabCategoriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCategoryID, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(tabCategoriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtCategoryName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(tabCategoriesLayout.createSequentialGroup()
-                        .addComponent(jButton9)
+                        .addComponent(btnCategorySave)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton10)
+                        .addComponent(btnCategotyEdit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton11)
+                        .addComponent(btnCategotyDelete)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton12))
+                        .addComponent(btnCategotyReset))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 960, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(41, 41, 41))
         );
         tabCategoriesLayout.setVerticalGroup(
             tabCategoriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -922,20 +932,20 @@ public class POSView extends javax.swing.JFrame {
                     .addGroup(tabCategoriesLayout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtCategoryID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(tabCategoriesLayout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4)))
+                        .addComponent(txtCategoryName)))
                 .addGap(16, 16, 16)
                 .addGroup(tabCategoriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9)
-                    .addComponent(jButton10)
-                    .addComponent(jButton11)
-                    .addComponent(jButton12))
+                    .addComponent(btnCategorySave)
+                    .addComponent(btnCategotyEdit)
+                    .addComponent(btnCategotyDelete)
+                    .addComponent(btnCategotyReset))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 187, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         tabPOS.addTab("Categories", tabCategories);
@@ -1130,6 +1140,13 @@ public class POSView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void btnCategorySaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategorySaveMouseClicked
+        // TODO add your handling code here:
+        String name = txtCategoryName.getText().trim();
+        cd1.saveCategory(name);
+        cd1.showCategory(tableCategories);
+    }//GEN-LAST:event_btnCategorySaveMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1173,6 +1190,10 @@ public class POSView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCategories;
+    private javax.swing.JButton btnCategorySave;
+    private javax.swing.JButton btnCategotyDelete;
+    private javax.swing.JButton btnCategotyEdit;
+    private javax.swing.JButton btnCategotyReset;
     private javax.swing.JButton btnCustomerRefresh;
     private javax.swing.JButton btnCustomerSearch;
     private javax.swing.JButton btnCustomers;
@@ -1184,9 +1205,6 @@ public class POSView extends javax.swing.JFrame {
     private javax.swing.JButton btnStock;
     private javax.swing.JButton btnSuppliers;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1194,7 +1212,6 @@ public class POSView extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -1230,11 +1247,8 @@ public class POSView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
@@ -1249,7 +1263,10 @@ public class POSView extends javax.swing.JFrame {
     private javax.swing.JPanel tabSales;
     private javax.swing.JPanel tabStock;
     private javax.swing.JPanel tabSuppliers;
+    private javax.swing.JTable tableCategories;
     private javax.swing.JTable tableCustomers;
+    private javax.swing.JTextField txtCategoryID;
+    private javax.swing.JTextField txtCategoryName;
     private javax.swing.JTextField txtCustomersAddress;
     private javax.swing.JTextField txtCustomersEmail;
     private javax.swing.JTextField txtCustomersID;
