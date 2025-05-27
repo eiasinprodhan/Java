@@ -3,22 +3,29 @@ package view;
 import dao.CategoryDao;
 import dao.CustomersDao;
 import dao.ProductsDAO;
+import entity.User;
+import javax.swing.JOptionPane;
 
 public class POSView extends javax.swing.JFrame {
 
     CustomersDao cd = new CustomersDao();
     ProductsDAO pd = new ProductsDAO();
     CategoryDao cd1 = new CategoryDao();
-
+    User u = new User();
 
     public POSView() {
         initComponents();
         cd.showCustomers(tableCustomers);
         cd1.showCategory(tableCategories);
         pd.loadCategoryToProduct(comboProductCategory);
+        String role = u.getRole();
+        System.out.println(role);
+        
     }
 
     @SuppressWarnings("unchecked")
+    
+   
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -1043,6 +1050,7 @@ public class POSView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
 
     private void btnDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDashboardMouseClicked
         // TODO add your handling code here:

@@ -4,6 +4,8 @@
  */
 package view;
 
+import dao.UserDao;
+import entity.User;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,6 +13,8 @@ import javax.swing.JOptionPane;
  * @author Admin
  */
 public class Login extends javax.swing.JFrame {
+
+    UserDao ud = new UserDao();
 
     /**
      * Creates new form Login
@@ -108,15 +112,18 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         String userName = txtUserName.getText().trim();
         String password = txtPassword.getText().trim();
+        String userRole = ud.checkUser(userName, password);
 
-        if (userName.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")) {
+        if (userRole != null) {
             POSView pv = new POSView();
+            User u = new User();
             this.dispose();
             pv.setVisible(true);
-        }
-        else{
+            u.setRole(userRole);
+        } else {
             JOptionPane.showMessageDialog(null, "Username or password is incorrect.");
         }
+
     }//GEN-LAST:event_btnLoginMouseClicked
 
     /**

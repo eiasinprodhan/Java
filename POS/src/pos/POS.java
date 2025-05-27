@@ -1,12 +1,14 @@
 package pos;
 
-import view.POSView;
+import view.Login;
+
+
 
 public class POS {
 
     public static void main(String[] args) {
-        POSView pv = new POSView();
-        pv.setVisible(true);
+        Login l = new Login();
+        l.setVisible(true);
     }
     
 }
