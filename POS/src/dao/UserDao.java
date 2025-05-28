@@ -37,8 +37,6 @@ public class UserDao {
                 dc.getConnection().close();
 
                 for (User users : userList) {
-                    
-
                     if (user.equals(users.getName()) && pass.equals(users.getPassword())) {
                         userRole = users.getRole();
                         break;
