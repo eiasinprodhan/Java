@@ -1,5 +1,6 @@
 package pos;
 
+import view.LoginView;
 import view.POSView;
 
 
@@ -7,8 +8,8 @@ import view.POSView;
 public class POS {
 
     public static void main(String[] args) {
-        POSView pv = new POSView();
-        pv.setVisible(true);
+        LoginView lv = new LoginView();
+        lv.setVisible(true);
     }
     
 }

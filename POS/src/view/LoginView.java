@@ -87,6 +87,7 @@ public class LoginView extends javax.swing.JFrame {
         String userName = txtUserName.getText().trim();
         String password = txtPassword.getText().trim();
         userRole = ud.checkUser(userName, password);
+        System.out.println(userRole);
 
         if (userRole != null) {
             POSView pv = new POSView();
