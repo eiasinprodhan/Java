@@ -35,7 +35,7 @@ public class ProductsDAO {
     }
 
     public void saveProduct(String name, String category) {
-        sql = "insert into products(name, category)values(?, ?)";
+        sql = "insert into product(name, category)values(?, ?)";
         try {
             ps = dc.getConnection().prepareStatement(sql);
             ps.setString(1, name);
@@ -53,7 +53,7 @@ public class ProductsDAO {
         DefaultTableModel tableModel = new DefaultTableModel(columnName, 0);
         jt.setModel(tableModel);
 
-        sql = "select * from products";
+        sql = "select * from product";
         try {
             ps = dc.getConnection().prepareStatement(sql);
             rs = ps.executeQuery();

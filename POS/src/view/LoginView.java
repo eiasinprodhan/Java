@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  * @author Admin
  */
 public class LoginView extends javax.swing.JFrame {
+
     public String userRole;
     UserDao ud = new UserDao();
 
@@ -25,8 +26,6 @@ public class LoginView extends javax.swing.JFrame {
     public String getUserRole() {
         return userRole;
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -120,7 +119,7 @@ public class LoginView extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        
+
         //</editor-fold>
         //</editor-fold>
 
