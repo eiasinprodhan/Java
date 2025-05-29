@@ -18,6 +18,7 @@ public class POSView extends javax.swing.JFrame {
         cd1.showCategory(tableCategories);
         pd.loadCategoryToProduct(comboProductCategory);
         sd.showSuppliers(tableSuppliers);
+        pd.showAllProducts(tableProducts);
     }
 
     @SuppressWarnings("unchecked")
@@ -51,16 +52,16 @@ public class POSView extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtProductID = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtProductName = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tableProducts = new javax.swing.JTable();
         comboProductCategory = new javax.swing.JComboBox<>();
         tabCustomers = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -436,7 +437,7 @@ public class POSView extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("ID");
 
-        jTextField1.setBorder(new javax.swing.border.MatteBorder(null));
+        txtProductID.setBorder(new javax.swing.border.MatteBorder(null));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -448,13 +449,18 @@ public class POSView extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("Name");
 
-        jTextField5.setBorder(new javax.swing.border.MatteBorder(null));
+        txtProductName.setBorder(new javax.swing.border.MatteBorder(null));
 
         jButton1.setBackground(new java.awt.Color(51, 153, 0));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Save");
         jButton1.setFocusPainted(false);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(0, 0, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -479,7 +485,7 @@ public class POSView extends javax.swing.JFrame {
         jButton4.setText("Reset");
         jButton4.setFocusPainted(false);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -490,7 +496,7 @@ public class POSView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tableProducts);
 
         comboProductCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboProductCategory.setBorder(new javax.swing.border.MatteBorder(null));
@@ -517,11 +523,11 @@ public class POSView extends javax.swing.JFrame {
                             .addGroup(tabProductsLayout.createSequentialGroup()
                                 .addGap(15, 15, 15)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtProductID, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(tabProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(tabProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -534,11 +540,11 @@ public class POSView extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tabProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtProductID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(tabProductsLayout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(comboProductCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(tabProductsLayout.createSequentialGroup()
                         .addGroup(tabProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1407,6 +1413,14 @@ public class POSView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPurchasesActionPerformed
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        String name = txtProductName.getText();
+        String category = comboProductCategory.getSelectedItem().toString();
+        pd.saveProduct(name, category);
+        pd.showAllProducts(tableProducts);
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1531,13 +1545,10 @@ public class POSView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JPanel tabCategories;
     private javax.swing.JPanel tabCustomers;
@@ -1551,6 +1562,7 @@ public class POSView extends javax.swing.JFrame {
     private javax.swing.JPanel tabSuppliers;
     private javax.swing.JTable tableCategories;
     private javax.swing.JTable tableCustomers;
+    private javax.swing.JTable tableProducts;
     private javax.swing.JTable tableSuppliers;
     private javax.swing.JTextField txtCategoryID;
     private javax.swing.JTextField txtCategoryName;
@@ -1559,6 +1571,8 @@ public class POSView extends javax.swing.JFrame {
     private javax.swing.JTextField txtCustomersID;
     private javax.swing.JTextField txtCustomersName;
     private javax.swing.JTextField txtCustomersPhone;
+    private javax.swing.JTextField txtProductID;
+    private javax.swing.JTextField txtProductName;
     private javax.swing.JTextField txtSupplierCell;
     private javax.swing.JTextField txtSupplierContactPerson;
     private javax.swing.JTextField txtSupplierEmail;
