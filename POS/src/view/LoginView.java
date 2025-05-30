@@ -86,11 +86,12 @@ public class LoginView extends javax.swing.JFrame {
         String userName = txtUserName.getText().trim();
         String password = txtPassword.getText().trim();
         userRole = ud.checkUser(userName, password);
-        System.out.println(userRole);
+        
+        POSView pv = new POSView();
 
         if (userRole != null) {
-            POSView pv = new POSView();
             this.dispose();
+            pv.setUsername(userRole);
             pv.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Username or password is incorrect.");

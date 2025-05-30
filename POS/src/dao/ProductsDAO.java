@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import util.DBUtil;
 
 public class ProductsDAO {
@@ -53,7 +52,7 @@ public class ProductsDAO {
         DefaultTableModel tableModel = new DefaultTableModel(columnName, 0);
         jt.setModel(tableModel);
 
-        sql = "select * from product";
+        sql = "select * from products";
         try {
             ps = dc.getConnection().prepareStatement(sql);
             rs = ps.executeQuery();

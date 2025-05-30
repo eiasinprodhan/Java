@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
 --
--- Host: localhost    Database: pos
+-- Host: 127.0.0.1    Database: pos
 -- ------------------------------------------------------
 -- Server version	8.0.42
 
@@ -27,7 +27,7 @@ CREATE TABLE `category` (
   `Name` varchar(100) NOT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `Name` (`Name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,6 +36,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (1,'Desktop'),(6,'Earphone'),(5,'Headphone'),(7,'Keyboard'),(2,'Laptop'),(8,'Mobile'),(3,'Mouse'),(4,'Printer');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -49,12 +50,12 @@ DROP TABLE IF EXISTS `customer`;
 CREATE TABLE `customer` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(100) NOT NULL,
-  `Cell` varchar(20) DEFAULT NULL,
-  `Address` varchar(255) DEFAULT NULL,
-  `Email` varchar(100) DEFAULT NULL,
+  `Cell` varchar(20) NOT NULL,
+  `Address` varchar(255) NOT NULL,
+  `Email` varchar(100) NOT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `Email` (`Email`)
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,7 +64,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (75,'fffff','ffff','ffff','fff'),(76,'','','','');
+INSERT INTO `customer` VALUES (4,'Eiasin Prodhan','019865321587','Dhaka, Bangladesh','eiasinprodhan@gmaiil.com'),(5,'Rakib','018653215846','Netrokona, Rangpur','rakibislam@gmail.com'),(6,'Parvej','01986548548','Shreemangal, Shylet','parvejhossain@gmail.com');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,64 +96,57 @@ INSERT INTO `details` VALUES (1,'Eiasin','eiasin@gmail.com','01865848755'),(2,'S
 UNLOCK TABLES;
 
 --
--- Table structure for table `product`
+-- Table structure for table `products`
 --
 
-DROP TABLE IF EXISTS `product`;
+DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `product` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(100) NOT NULL,
-  `UnitPrice` decimal(10,2) DEFAULT NULL,
-  `Quantity` int DEFAULT NULL,
-  `ExpDate` date DEFAULT NULL,
-  `CategoryId` int DEFAULT NULL,
-  PRIMARY KEY (`Id`),
-  KEY `CategoryId` (`CategoryId`),
-  CONSTRAINT `product_ibfk_1` FOREIGN KEY (`CategoryId`) REFERENCES `category` (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `products` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `category` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `product`
+-- Dumping data for table `products`
 --
 
-LOCK TABLES `product` WRITE;
-/*!40000 ALTER TABLE `product` DISABLE KEYS */;
-/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Dell','Desktop'),(2,'Samsung','Mobile'),(3,'Apple','Headphone'),(4,'A4Tech','Keyboard'),(5,'HP','Desktop'),(6,'Sony','Mobile'),(7,'Vivo','Mobile'),(8,'Nokia','Mobile'),(9,'Xiaomi','Mobile'),(10,'Realme','Mobile'),(11,'OnePlus','Mobile');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `sales`
+-- Table structure for table `purchase`
 --
 
-DROP TABLE IF EXISTS `sales`;
+DROP TABLE IF EXISTS `purchase`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `sales` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `ProductId` int DEFAULT NULL,
-  `CustomerId` int DEFAULT NULL,
-  `UnitPrice` decimal(10,2) DEFAULT NULL,
-  `Quantity` int DEFAULT NULL,
-  `TotalPrice` decimal(12,2) DEFAULT NULL,
-  `SaleDate` date DEFAULT NULL,
-  PRIMARY KEY (`Id`),
-  KEY `ProductId` (`ProductId`),
-  KEY `CustomerId` (`CustomerId`),
-  CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`ProductId`) REFERENCES `product` (`Id`),
-  CONSTRAINT `sales_ibfk_2` FOREIGN KEY (`CustomerId`) REFERENCES `customer` (`Id`)
+CREATE TABLE `purchase` (
+  `id` int NOT NULL,
+  `category` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `supplier` varchar(45) NOT NULL,
+  `unitPrice` float(10,2) NOT NULL,
+  `quantity` float(10,2) NOT NULL,
+  `totalPrice` float(10,2) NOT NULL,
+  `dateAndTime` datetime NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `sales`
+-- Dumping data for table `purchase`
 --
 
-LOCK TABLES `sales` WRITE;
-/*!40000 ALTER TABLE `sales` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sales` ENABLE KEYS */;
+LOCK TABLES `purchase` WRITE;
+/*!40000 ALTER TABLE `purchase` DISABLE KEYS */;
+/*!40000 ALTER TABLE `purchase` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -171,8 +165,8 @@ CREATE TABLE `stock` (
   PRIMARY KEY (`Id`),
   KEY `ProductId` (`ProductId`),
   KEY `SupplierId` (`SupplierId`),
-  CONSTRAINT `stock_ibfk_1` FOREIGN KEY (`ProductId`) REFERENCES `product` (`Id`),
-  CONSTRAINT `stock_ibfk_2` FOREIGN KEY (`SupplierId`) REFERENCES `suppliers` (`Id`)
+  CONSTRAINT `stock_ibfk_1` FOREIGN KEY (`ProductId`) REFERENCES `products` (`id`),
+  CONSTRAINT `stock_ibfk_2` FOREIGN KEY (`SupplierId`) REFERENCES `suppliers` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -193,14 +187,15 @@ DROP TABLE IF EXISTS `suppliers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `suppliers` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(100) NOT NULL,
-  `Address` varchar(255) DEFAULT NULL,
-  `Cell` varchar(20) DEFAULT NULL,
-  `Email` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`Id`),
-  UNIQUE KEY `Email` (`Email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `cell` varchar(20) NOT NULL,
+  `contactPerson` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  UNIQUE KEY `cell_UNIQUE` (`cell`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -209,7 +204,34 @@ CREATE TABLE `suppliers` (
 
 LOCK TABLES `suppliers` WRITE;
 /*!40000 ALTER TABLE `suppliers` DISABLE KEYS */;
+INSERT INTO `suppliers` VALUES (1,'Square','01700000000','square@gmail.com','Jony'),(3,'ACME','01800000000','acme@gmail.com','Rony');
 /*!40000 ALTER TABLE `suppliers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `userName` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `role` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'eiasin','12345','Admin'),(2,'parvej','12345','Manager'),(3,'rakib','12345','Cashier');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -221,4 +243,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-21 15:10:05
+-- Dump completed on 2025-05-30 23:33:51
