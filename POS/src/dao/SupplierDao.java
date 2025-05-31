@@ -1,10 +1,16 @@
 package dao;
 
+import entity.Category;
+import entity.Supplier;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -155,5 +161,33 @@ public class SupplierDao {
             JOptionPane.showMessageDialog(null, "Customer not deleted.");
             Logger.getLogger(SupplierDao.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public List<Supplier> getAllSupplier(){
+        List<Supplier> supplierList = new ArrayList<>();
+        String sql = "select * from suppliers";
+        try {
+            ps = dc.getConnection().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                supplierList.add(new Supplier(rs.getInt("id"), 
+                        rs.getString("name"),
+                        rs.getString("email"),
+                        rs.getString("cell"),
+                        rs.getString("contactPerson")));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SupplierDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return supplierList;
+    }
+    
+    public void showAllSupplierToCombo(JComboBox<String> comboBox){
+        comboBox.removeAllItems();
+        List<Supplier> supplierList = getAllSupplier();
+        for(Supplier supplier: supplierList){
+            comboBox.addItem(supplier.getName());
+        }
+        
     }
 }

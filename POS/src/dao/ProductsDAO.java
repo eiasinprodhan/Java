@@ -1,6 +1,7 @@
 package dao;
 
 import entity.Category;
+import entity.Product;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,6 +34,31 @@ public class ProductsDAO {
 
     }
 
+    public void getAllProductsByCategory(String category, JComboBox comboBox) {
+        List<Product> products = new ArrayList<>();
+
+        sql = "select * from products where category=?";
+        try {
+            ps = dc.getConnection().prepareStatement(sql);
+            ps.setString(1, category);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                products.add(new Product(id, name, category));
+            }
+
+            comboBox.removeAllItems();
+
+            for (Product product : products) {
+                comboBox.addItem(product.getName());
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoryDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
     public void saveProduct(String name, String category) {
         sql = "insert into product(name, category)values(?, ?)";
         try {
@@ -56,12 +82,12 @@ public class ProductsDAO {
         try {
             ps = dc.getConnection().prepareStatement(sql);
             rs = ps.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
                 String category = rs.getString("category");
-                
-                Object[] rowData = {id, name, category}; 
+
+                Object[] rowData = {id, name, category};
                 tableModel.addRow(rowData);
             }
         } catch (SQLException ex) {
