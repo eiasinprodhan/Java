@@ -9,7 +9,7 @@ import java.awt.event.ItemEvent;
 
 public class POSView extends javax.swing.JFrame {
 
-    private String username;
+    private String userRole;
 
     CustomersDao cd = new CustomersDao();
     ProductsDAO pd = new ProductsDAO();
@@ -34,11 +34,11 @@ public class POSView extends javax.swing.JFrame {
         });
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-        if (username.equalsIgnoreCase("manager")) {
+    public void setUsername(String userRole) {
+        this.userRole = userRole;
+        if (userRole.equalsIgnoreCase("manager")) {
             btnPurchases.setVisible(false);
-        } else if (username.equalsIgnoreCase("cashier")) {
+        } else if (userRole.equalsIgnoreCase("cashier")) {
             btnSuppliers.setVisible(false);
             btnPurchases.setVisible(false);
             btnStock.setVisible(false);
