@@ -128,7 +128,7 @@ DROP TABLE IF EXISTS `purchase`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `purchase` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `category` varchar(45) NOT NULL,
   `name` varchar(45) NOT NULL,
   `supplier` varchar(45) NOT NULL,
@@ -137,7 +137,7 @@ CREATE TABLE `purchase` (
   `totalPrice` float(10,2) NOT NULL,
   `dateAndTime` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,6 +146,7 @@ CREATE TABLE `purchase` (
 
 LOCK TABLES `purchase` WRITE;
 /*!40000 ALTER TABLE `purchase` DISABLE KEYS */;
+INSERT INTO `purchase` VALUES (1,'Desktop','Dell','Square',50000.00,12.00,600000.00,'2025-05-31 13:53:10'),(2,'Mobile','Nokia','Square',25000.00,12.00,300000.00,'2025-05-31 13:54:24'),(3,'Mobile','Xiaomi','ACME',15000.00,12.00,180000.00,'2025-05-31 13:56:09');
 /*!40000 ALTER TABLE `purchase` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,4 +244,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-30 23:33:51
+-- Dump completed on 2025-05-31 14:01:27
