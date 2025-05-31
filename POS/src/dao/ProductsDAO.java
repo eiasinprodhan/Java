@@ -60,7 +60,7 @@ public class ProductsDAO {
     }
 
     public void saveProduct(String name, String category) {
-        sql = "insert into product(name, category)values(?, ?)";
+        sql = "insert into products(name, category)values(?, ?)";
         try {
             ps = dc.getConnection().prepareStatement(sql);
             ps.setString(1, name);
