@@ -15,6 +15,16 @@ public class Purchase {
     public Purchase() {
     }
 
+    public Purchase(String category, String name, String supplier, float unitPrice, float quantity, float totaltPrice, Date dateAndTime) {
+        this.category = category;
+        this.name = name;
+        this.supplier = supplier;
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
+        this.totaltPrice = totaltPrice;
+        this.dateAndTime = dateAndTime;
+    }
+    
     public Purchase(int id, String category, String name, String supplier, float unitPrice, float quantity, float totaltPrice, Date dateAndTime) {
         this.id = id;
         this.category = category;
