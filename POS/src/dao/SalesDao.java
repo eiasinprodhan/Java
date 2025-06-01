@@ -82,7 +82,7 @@ public class SalesDao {
     }
 
     public Float checkStock(String productName) {
-        Float quantity = null;
+        Float quantity = 0f;
         sql = "select quantity from stock where name=?";
         try {
             ps = dc.getConnection().prepareStatement(sql);
