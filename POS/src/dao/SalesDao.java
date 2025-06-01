@@ -13,8 +13,7 @@ import util.DBUtil;
 
 public class SalesDao {
 
-    DBUtil du = new DBUtil();
-    Connection dc = du.getConnection();
+    DBUtil dc = new DBUtil();
     PreparedStatement ps;
     String sql;
     ResultSet rs;
@@ -25,7 +24,7 @@ public class SalesDao {
         jt.setModel(tableModel);
         sql = "select * from sales";
         try {
-            ps = dc.prepareStatement(sql);
+            ps = dc.getConnection().prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -39,6 +38,9 @@ public class SalesDao {
                 Object[] rowData = {id, productName, category, customerName, unitPrice, quantity, totalPrice, dateAndTime};
                 tableModel.addRow(rowData);
             }
+            rs.close();
+            ps.close();
+            dc.getConnection().close();
         } catch (SQLException ex) {
             Logger.getLogger(PurchaseDao.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -48,7 +50,7 @@ public class SalesDao {
     public void saveSales(String category, String productName, String customerName, float unitPrice, float quantity, float totalPrice) {
         sql = "insert into sales(category, productName, customerName, unitPrice, quantity, totalPrice, dateAndTime)values(?, ?, ?, ?, ?, ?, now())";
         try {
-            ps = dc.prepareStatement(sql);
+            ps = dc.getConnection().prepareStatement(sql);
             ps.setString(1, category);
             ps.setString(2, productName);
             ps.setString(3, customerName);
@@ -56,6 +58,8 @@ public class SalesDao {
             ps.setFloat(5, quantity);
             ps.setFloat(6, totalPrice);
             ps.executeUpdate();
+            ps.close();
+            dc.getConnection().close();
         } catch (SQLException ex) {
             Logger.getLogger(SalesDao.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -65,13 +69,33 @@ public class SalesDao {
     public void updateStock(String productName, float quantity) {
         sql = "update stock set quantity = quantity - ? where name=?";
         try {
-            ps = dc.prepareStatement(sql);
+            ps = dc.getConnection().prepareStatement(sql);
             ps.setFloat(1, quantity);
             ps.setString(2, productName);
             ps.executeUpdate();
+            ps.close();
+            dc.getConnection().close();
         } catch (SQLException ex) {
             Logger.getLogger(StockDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+
+    public Float checkStock(String productName) {
+        Float quantity = null;
+        sql = "select quantity from stock where name=?";
+        try {
+            ps = dc.getConnection().prepareStatement(sql);
+            ps.setString(1, productName);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                quantity = rs.getFloat("quantity");
+            }
+            ps.close();
+            dc.getConnection().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(StockDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return quantity;
     }
 }

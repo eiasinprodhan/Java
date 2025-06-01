@@ -10,6 +10,7 @@ import dao.StockDao;
 import dao.SupplierDao;
 import java.awt.event.ItemEvent;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import util.DateConverter;
 
 public class POSView extends javax.swing.JFrame {
@@ -25,6 +26,7 @@ public class POSView extends javax.swing.JFrame {
     ReportDao rd = new ReportDao();
     SalesDao sd2 = new SalesDao();
     DateConverter converter = new DateConverter();
+
     public POSView() {
         initComponents();
         cd.showCustomers(tableCustomers);
@@ -44,7 +46,7 @@ public class POSView extends javax.swing.JFrame {
             String categoryName = comboPurchaseCategory.getSelectedItem().toString();
             pd.getAllProductsByCategory(categoryName, comboPurchaseName);
         });
-        
+
         comboSalesCategories.addItemListener((ItemEvent e) -> {
             String categoryName = comboSalesCategories.getSelectedItem().toString();
             pd.getAllProductsByCategory(categoryName, comboSalesProducts);
@@ -1729,20 +1731,21 @@ public class POSView extends javax.swing.JFrame {
         // TODO add your handling code here:
         Date fromData = dateReportFrom.getDate();
         Date toData = dateReportTo.getDate();
-        
+
         java.sql.Date from = converter.utilDateToSqlDate(fromData);
         java.sql.Date to = converter.utilDateToSqlDate(toData);
-        
+
         rd.generatePDFReportForPurchase(from, to, tableReport);
-        
-        System.out.println( to);
+
+        System.out.println(to);
     }//GEN-LAST:event_btnReportPurchaseShowMouseClicked
 
     private void txtSalesQuantityFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSalesQuantityFocusLost
         // TODO add your handling code here:
-        float unitPrice = Float.parseFloat(txtSalesUnitPrice.getText().trim());
+
         float quantity = Float.parseFloat(txtSalesQuantity.getText().trim());
 
+        float unitPrice = Float.parseFloat(txtSalesUnitPrice.getText().trim());
         float totalPrice = unitPrice * quantity;
 
         txtSalesTotalPrice.setText(String.valueOf(totalPrice));
@@ -1750,16 +1753,22 @@ public class POSView extends javax.swing.JFrame {
 
     private void btnSalesSellMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesSellMouseClicked
         // TODO add your handling code here:
-        String category = comboSalesCategories.getSelectedItem().toString();
         String productName = comboSalesProducts.getSelectedItem().toString();
-        String customerName = comboSalesCustomers.getSelectedItem().toString();
-        float unitPrice = Float.parseFloat(txtSalesUnitPrice.getText());
-        float quantity = Float.parseFloat(txtSalesQuantity.getText());
-        float totalPrice = Float.parseFloat(txtSalesTotalPrice.getText());
-        sd2.updateStock(productName, quantity);
-        sd2.saveSales(category, productName, customerName, unitPrice, quantity, totalPrice);
-        sd2.showSales(tableSales);
-        
+        Float checkStock = sd2.checkStock(productName);
+        if (checkStock > 0) {
+            String category = comboSalesCategories.getSelectedItem().toString();
+            String customerName = comboSalesCustomers.getSelectedItem().toString();
+            float unitPrice = Float.parseFloat(txtSalesUnitPrice.getText());
+            float quantity = Float.parseFloat(txtSalesQuantity.getText());
+            float totalPrice = Float.parseFloat(txtSalesTotalPrice.getText());
+            sd2.updateStock(productName, quantity);
+            sd2.saveSales(category, productName, customerName, unitPrice, quantity, totalPrice);
+            sd2.showSales(tableSales);
+        } else {
+            JOptionPane.showMessageDialog(null, "Products not available.");
+        }
+
+
     }//GEN-LAST:event_btnSalesSellMouseClicked
 
     /**
