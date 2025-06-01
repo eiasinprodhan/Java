@@ -76,7 +76,7 @@ public class SalesDao {
             ps.close();
             dc.getConnection().close();
         } catch (SQLException ex) {
-            Logger.getLogger(StockDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SalesDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -94,7 +94,7 @@ public class SalesDao {
             ps.close();
             dc.getConnection().close();
         } catch (SQLException ex) {
-            Logger.getLogger(StockDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SalesDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         return quantity;
     }

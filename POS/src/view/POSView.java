@@ -1639,13 +1639,14 @@ public class POSView extends javax.swing.JFrame {
 
     private void txtSalesQuantityFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSalesQuantityFocusLost
         // TODO add your handling code here:
+        if (txtSalesQuantity.getText().trim() != null && txtSalesUnitPrice.getText().trim() != null) {
+            float quantity = Float.parseFloat(txtSalesQuantity.getText().trim());
 
-        float quantity = Float.parseFloat(txtSalesQuantity.getText().trim());
+            float unitPrice = Float.parseFloat(txtSalesUnitPrice.getText().trim());
+            float totalPrice = unitPrice * quantity;
 
-        float unitPrice = Float.parseFloat(txtSalesUnitPrice.getText().trim());
-        float totalPrice = unitPrice * quantity;
-
-        txtSalesTotalPrice.setText(String.valueOf(totalPrice));
+            txtSalesTotalPrice.setText(String.valueOf(totalPrice));
+        }
     }//GEN-LAST:event_txtSalesQuantityFocusLost
 
     private void btnSalesSellMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesSellMouseClicked
