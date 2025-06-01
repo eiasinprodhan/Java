@@ -253,7 +253,7 @@ public class POSView extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Main Menu");
 
-        btnDashboard.setBackground(new java.awt.Color(153, 255, 0));
+        btnDashboard.setBackground(new java.awt.Color(0, 204, 153));
         btnDashboard.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnDashboard.setText("Dashboard");
         btnDashboard.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 51), new java.awt.Color(102, 102, 102), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -270,7 +270,7 @@ public class POSView extends javax.swing.JFrame {
             }
         });
 
-        btnProducts.setBackground(new java.awt.Color(255, 255, 0));
+        btnProducts.setBackground(new java.awt.Color(255, 153, 0));
         btnProducts.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnProducts.setText("Products");
         btnProducts.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 51), new java.awt.Color(102, 102, 102), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -282,7 +282,7 @@ public class POSView extends javax.swing.JFrame {
             }
         });
 
-        btnCustomers.setBackground(new java.awt.Color(255, 255, 0));
+        btnCustomers.setBackground(new java.awt.Color(255, 153, 0));
         btnCustomers.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnCustomers.setText("Customers");
         btnCustomers.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 51), new java.awt.Color(102, 102, 102), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -299,7 +299,7 @@ public class POSView extends javax.swing.JFrame {
             }
         });
 
-        btnSuppliers.setBackground(new java.awt.Color(255, 255, 0));
+        btnSuppliers.setBackground(new java.awt.Color(255, 153, 0));
         btnSuppliers.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSuppliers.setText("Suppliers");
         btnSuppliers.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 51), new java.awt.Color(102, 102, 102), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -311,7 +311,7 @@ public class POSView extends javax.swing.JFrame {
             }
         });
 
-        btnCategories.setBackground(new java.awt.Color(255, 255, 0));
+        btnCategories.setBackground(new java.awt.Color(255, 153, 0));
         btnCategories.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnCategories.setText("Categories");
         btnCategories.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 51), new java.awt.Color(102, 102, 102), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -323,7 +323,7 @@ public class POSView extends javax.swing.JFrame {
             }
         });
 
-        btnPurchases.setBackground(new java.awt.Color(255, 255, 0));
+        btnPurchases.setBackground(new java.awt.Color(255, 153, 0));
         btnPurchases.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnPurchases.setText("Purchases");
         btnPurchases.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 51), new java.awt.Color(102, 102, 102), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -340,7 +340,7 @@ public class POSView extends javax.swing.JFrame {
             }
         });
 
-        btnSales.setBackground(new java.awt.Color(255, 255, 0));
+        btnSales.setBackground(new java.awt.Color(255, 153, 0));
         btnSales.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSales.setText("Sales");
         btnSales.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 51), new java.awt.Color(102, 102, 102), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -352,7 +352,7 @@ public class POSView extends javax.swing.JFrame {
             }
         });
 
-        btnReport.setBackground(new java.awt.Color(51, 102, 255));
+        btnReport.setBackground(new java.awt.Color(102, 153, 255));
         btnReport.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnReport.setText("Report");
         btnReport.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 51), new java.awt.Color(102, 102, 102), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -364,7 +364,7 @@ public class POSView extends javax.swing.JFrame {
             }
         });
 
-        btnStock.setBackground(new java.awt.Color(255, 255, 0));
+        btnStock.setBackground(new java.awt.Color(255, 153, 0));
         btnStock.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnStock.setText("Stock");
         btnStock.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(51, 51, 51), new java.awt.Color(102, 102, 102), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -432,10 +432,9 @@ public class POSView extends javax.swing.JFrame {
 
         tabPOS.addTab("Dashboard", tabDashboard);
 
-        tabProducts.setBackground(new java.awt.Color(153, 255, 0));
         tabProducts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel3.setBackground(new java.awt.Color(255, 153, 0));
         jPanel3.setPreferredSize(new java.awt.Dimension(1000, 60));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -517,10 +516,9 @@ public class POSView extends javax.swing.JFrame {
 
         tabPOS.addTab("Products", tabProducts);
 
-        tabCustomers.setBackground(new java.awt.Color(153, 255, 0));
         tabCustomers.setPreferredSize(new java.awt.Dimension(1000, 740));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel4.setBackground(new java.awt.Color(255, 153, 0));
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -736,9 +734,7 @@ public class POSView extends javax.swing.JFrame {
 
         tabPOS.addTab("Customers", tabCustomers);
 
-        tabSuppliers.setBackground(new java.awt.Color(153, 255, 0));
-
-        jPanel7.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel7.setBackground(new java.awt.Color(255, 153, 0));
         jPanel7.setPreferredSize(new java.awt.Dimension(900, 60));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -848,7 +844,7 @@ public class POSView extends javax.swing.JFrame {
                     .addGroup(tabSuppliersLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 892, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         tabSuppliersLayout.setVerticalGroup(
             tabSuppliersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -890,9 +886,7 @@ public class POSView extends javax.swing.JFrame {
 
         tabPOS.addTab("Suppliers", tabSuppliers);
 
-        tabCategories.setBackground(new java.awt.Color(153, 255, 0));
-
-        jPanel5.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel5.setBackground(new java.awt.Color(255, 153, 0));
         jPanel5.setMinimumSize(new java.awt.Dimension(937, 60));
         jPanel5.setPreferredSize(new java.awt.Dimension(1000, 50));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1000,7 +994,7 @@ public class POSView extends javax.swing.JFrame {
 
         tabPurchases.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel8.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel8.setBackground(new java.awt.Color(255, 153, 0));
         jPanel8.setPreferredSize(new java.awt.Dimension(1000, 60));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -1019,8 +1013,6 @@ public class POSView extends javax.swing.JFrame {
         );
 
         tabPurchases.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jPanel9.setBackground(new java.awt.Color(153, 255, 0));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel10.setText("ID");
@@ -1182,9 +1174,7 @@ public class POSView extends javax.swing.JFrame {
 
         tabPOS.addTab("Purchases", tabPurchases);
 
-        tabSales.setBackground(new java.awt.Color(153, 255, 0));
-
-        jPanel13.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel13.setBackground(new java.awt.Color(255, 153, 0));
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1363,9 +1353,7 @@ public class POSView extends javax.swing.JFrame {
 
         tabPOS.addTab("Sales", tabSales);
 
-        tabStock.setBackground(new java.awt.Color(153, 255, 0));
-
-        jPanel10.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel10.setBackground(new java.awt.Color(255, 153, 0));
         jPanel10.setPreferredSize(new java.awt.Dimension(1000, 60));
 
         jLabel31.setBackground(new java.awt.Color(0, 0, 0));
@@ -1417,8 +1405,6 @@ public class POSView extends javax.swing.JFrame {
         );
 
         tabPOS.addTab("Stock", tabStock);
-
-        tabReport.setBackground(new java.awt.Color(153, 255, 0));
 
         jPanel11.setBackground(new java.awt.Color(51, 102, 255));
 
