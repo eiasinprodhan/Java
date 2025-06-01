@@ -3,8 +3,11 @@ package dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -84,6 +87,32 @@ public class CustomersDao {
                 tableModel.addRow(rowData);
             }
             rs.close();
+            ps.close();
+            dc.getConnection().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomersDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+        public void showCustomersForSales(JComboBox comboBox) {
+        comboBox.removeAllItems();
+        
+        List<String> customerList = new ArrayList<>();
+
+        String sql = "SELECT name FROM customer";
+
+        try {
+            ps = dc.getConnection().prepareStatement(sql);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    String name = rs.getString("name");
+                    customerList.add(name);
+                }
+                
+                for(String customer : customerList){
+                    comboBox.addItem(customer);
+                }
+            }
             ps.close();
             dc.getConnection().close();
         } catch (SQLException ex) {

@@ -95,12 +95,11 @@ public class ReportDao {
             List<Purchase> purchases = purchaseReportByDate(from, to, jt);
 
             Document document = new Document(PageSize.A4);
-            LocalDate currentDate = LocalDate.now();
             String filePath = "Purchase Report.pdf";
             PdfWriter.getInstance(document, new FileOutputStream(filePath));
             document.open();
 
-            Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 15);
+            Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 16);
             Paragraph title = new Paragraph("Purchase Report", titleFont);
             title.setAlignment(Paragraph.ALIGN_CENTER);
             document.add(title);
@@ -113,11 +112,11 @@ public class ReportDao {
             table.setSpacingAfter(10f);
 
             //set table colum widths
-            float[] columWidths = {2.5f, 2.5f, 2.5f, 2.5f, 2.5f, 2.5f, 2.5f};
+            float[] columWidths = {3.5f, 2.0f, 2.0f, 2.0f, 2.0f, 2.0f, 2.0f};
             table.setWidths(columWidths);
 
             String[] headers = {"Product Name", "Unit Price", "Quantity", "Total Price", "Category", "Supplier", "Date"};
-            Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12);
+            Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10);
 
             for (String header : headers) {
 
@@ -127,10 +126,10 @@ public class ReportDao {
                 table.addCell(headerCell);
             }
             
-            Font dataFont = FontFactory.getFont(FontFactory.HELVETICA, 10);
+            Font dataFont = FontFactory.getFont(FontFactory.HELVETICA, 8);
                 for (Purchase p : purchases) {
 
-                    table.addCell(new PdfPCell(new Phrase(p.getName(), FontFactory.getFont(FontFactory.HELVETICA_BOLD, 10))));
+                    table.addCell(new PdfPCell(new Phrase(p.getName(), FontFactory.getFont(FontFactory.HELVETICA_BOLD, 8))));
                     table.addCell(new PdfPCell(new Phrase(String.valueOf(p.getUnitPrice()), dataFont)));
                     table.addCell(new PdfPCell(new Phrase(String.valueOf(p.getQuantity()), dataFont)));
                     table.addCell(new PdfPCell(new Phrase(String.valueOf(p.getTotaltPrice()), dataFont)));
