@@ -209,7 +209,7 @@ public class POSView extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tableSales = new javax.swing.JTable();
         jLabel42 = new javax.swing.JLabel();
-        labelSalesStock = new javax.swing.JLabel();
+        txtSalesStock = new javax.swing.JTextField();
         tabStock = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
@@ -1281,7 +1281,7 @@ public class POSView extends javax.swing.JFrame {
         jLabel42.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel42.setText("Stock");
         tabSales.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 134, 74, -1));
-        tabSales.add(labelSalesStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 200, 40));
+        tabSales.add(txtSalesStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 200, 40));
 
         tabPOS.addTab("Sales", tabSales);
 
@@ -1590,7 +1590,6 @@ public class POSView extends javax.swing.JFrame {
         String productName = comboSalesProducts.getSelectedItem().toString();
         float quantity = Float.parseFloat(txtSalesQuantity.getText());
         Float checkStock = sd2.checkStock(productName);
-        System.out.println(checkStock);
         if (checkStock >= quantity && checkStock>0) {
             String category = comboSalesCategories.getSelectedItem().toString();
             String customerName = comboSalesCustomers.getSelectedItem().toString();
@@ -1840,7 +1839,6 @@ public class POSView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JLabel labelSalesStock;
     private javax.swing.JPanel tabCategories;
     private javax.swing.JPanel tabCustomers;
     private javax.swing.JPanel tabDashboard;
@@ -1874,6 +1872,7 @@ public class POSView extends javax.swing.JFrame {
     private javax.swing.JTextField txtPurchaseUnitPrice;
     private javax.swing.JTextField txtSalesID;
     private javax.swing.JTextField txtSalesQuantity;
+    private javax.swing.JTextField txtSalesStock;
     private javax.swing.JTextField txtSalesTotalPrice;
     private javax.swing.JTextField txtSalesUnitPrice;
     private javax.swing.JTextField txtSupplierCell;
