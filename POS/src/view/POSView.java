@@ -101,9 +101,9 @@ public class POSView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txtProductName = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnProductsEdit = new javax.swing.JButton();
+        btnProductsDelete = new javax.swing.JButton();
+        btnProductsReset = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableProducts = new javax.swing.JTable();
         comboProductCategory = new javax.swing.JComboBox<>();
@@ -478,25 +478,35 @@ public class POSView extends javax.swing.JFrame {
         });
         tabProducts.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 90, -1));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setText("Edit");
-        jButton2.setFocusPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        btnProductsEdit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnProductsEdit.setText("Edit");
+        btnProductsEdit.setFocusPainted(false);
+        btnProductsEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnProductsEditMouseClicked(evt);
             }
         });
-        tabProducts.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 90, -1));
+        tabProducts.add(btnProductsEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 90, -1));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setText("Delete");
-        jButton3.setFocusPainted(false);
-        tabProducts.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 90, -1));
+        btnProductsDelete.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnProductsDelete.setText("Delete");
+        btnProductsDelete.setFocusPainted(false);
+        btnProductsDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnProductsDeleteMouseClicked(evt);
+            }
+        });
+        tabProducts.add(btnProductsDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 90, -1));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setText("Reset");
-        jButton4.setFocusPainted(false);
-        tabProducts.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 160, 90, -1));
+        btnProductsReset.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnProductsReset.setText("Reset");
+        btnProductsReset.setFocusPainted(false);
+        btnProductsReset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnProductsResetMouseClicked(evt);
+            }
+        });
+        tabProducts.add(btnProductsReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 160, 90, -1));
 
         tableProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -509,6 +519,11 @@ public class POSView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tableProducts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableProductsMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableProducts);
 
         tabProducts.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 900, 440));
@@ -1495,10 +1510,6 @@ public class POSView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCustomersActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void btnCategorySaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategorySaveMouseClicked
         // TODO add your handling code here:
         String name = txtCategoryName.getText().trim();
@@ -1530,6 +1541,9 @@ public class POSView extends javax.swing.JFrame {
 
         sd1.saveStock(name, category);
         sd1.showStock(tableStock);
+        
+        txtProductID.setText("");
+        txtProductName.setText("");
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void txtPurchaseQuantityFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPurchaseQuantityFocusLost
@@ -1686,6 +1700,42 @@ public class POSView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCustomersIDActionPerformed
 
+    private void tableProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableProductsMouseClicked
+        // TODO add your handling code here:
+        int rowIndex = tableProducts.getSelectedRow();
+        
+        String id = tableProducts.getModel().getValueAt(rowIndex, 0).toString();
+        String productName = tableProducts.getModel().getValueAt(rowIndex, 1).toString();
+        txtProductID.setText(id);
+        txtProductName.setText(productName);
+    }//GEN-LAST:event_tableProductsMouseClicked
+
+    private void btnProductsDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsDeleteMouseClicked
+        // TODO add your handling code here:
+        int id = Integer.parseInt(txtProductID.getText().trim());
+        pd.deleteProducts(id);
+        pd.showAllProducts(tableProducts);
+        txtProductID.setText("");
+        txtProductName.setText("");
+    }//GEN-LAST:event_btnProductsDeleteMouseClicked
+
+    private void btnProductsResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsResetMouseClicked
+        // TODO add your handling code here:
+        txtProductID.setText("");
+        txtProductName.setText("");
+    }//GEN-LAST:event_btnProductsResetMouseClicked
+
+    private void btnProductsEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductsEditMouseClicked
+        // TODO add your handling code here:
+        int id = Integer.parseInt(txtProductID.getText().trim());
+        String productName = txtProductName.getText();
+        String category = comboProductCategory.getSelectedItem().toString();
+        pd.editProduct(id, productName, category);
+        pd.showAllProducts(tableProducts);
+        txtProductID.setText("");
+        txtProductName.setText("");
+    }//GEN-LAST:event_btnProductsEditMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1738,6 +1788,9 @@ public class POSView extends javax.swing.JFrame {
     private javax.swing.JButton btnCustomers;
     private javax.swing.JButton btnDashboard;
     private javax.swing.JButton btnProducts;
+    private javax.swing.JButton btnProductsDelete;
+    private javax.swing.JButton btnProductsEdit;
+    private javax.swing.JButton btnProductsReset;
     private javax.swing.JButton btnPurchaseSave;
     private javax.swing.JButton btnPurchases;
     private javax.swing.JButton btnReport;
@@ -1768,9 +1821,6 @@ public class POSView extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;

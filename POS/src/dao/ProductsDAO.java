@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import util.DBUtil;
@@ -74,7 +76,7 @@ public class ProductsDAO {
     }
 
     public void showAllProducts(JTable jt) {
-        String[] columnName = {"ID", "Product Name", "Category"};
+        String[] columnName = {"ID", "Product Name", "Category", "Actions"};
         DefaultTableModel tableModel = new DefaultTableModel(columnName, 0);
         jt.setModel(tableModel);
 
@@ -93,6 +95,40 @@ public class ProductsDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ProductsDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public void editProduct(int id, String productName, String category){
+        sql = "update products set name = ?, category = ? where id = ?";
+        try {
+            ps = dc.getConnection().prepareStatement(sql);
+            ps.setString(1, productName);
+            ps.setString(2, category);
+            ps.setInt(3, id);
+            ps.executeUpdate();
+            ps.close();
+            dc.getConnection().close();
+            JOptionPane.showMessageDialog(null, "Product edited successfully.");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Product editing unsuccessful.");
+            Logger.getLogger(ProductsDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    public void deleteProducts(int id){
+        sql = "delete from products where id = ?";
+        try {
+            ps = dc.getConnection().prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            ps.close();
+            dc.getConnection().close();
+            JOptionPane.showMessageDialog(null, "Prodcut deleted successfully.");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Prodcut deleting unsuccessful.");
+            Logger.getLogger(ProductsDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
 }
